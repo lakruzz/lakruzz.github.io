@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700|Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/css/lakruzz.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/lakruzz-styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/slider.css" media="screen">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS feed" href="/feed.xml" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="/javascripts/googleanalytics.js"></script>
+
+      <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Why your web site should run on JAM rather than LAMP | Lakruzz - Personal blog by Lars Kruse</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Why your web site should run on JAM rather than LAMP" />
+<meta name="author" content="lakruzz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We’re jammin’. I want to jam it with you, we’re jammin’ and I hope you like jammin’ too. Ain’t no rules, ain’t no vow, you can do it anyhow ‘cause I and I will see you through. But every day we pay the price, come a little sacrifice; Jammin’ till the jam is through." />
+<meta property="og:description" content="We’re jammin’. I want to jam it with you, we’re jammin’ and I hope you like jammin’ too. Ain’t no rules, ain’t no vow, you can do it anyhow ‘cause I and I will see you through. But every day we pay the price, come a little sacrifice; Jammin’ till the jam is through." />
+<link rel="canonical" href="https://www.lakruzz.com/en/we-re-jammin/" />
+<meta property="og:url" content="https://www.lakruzz.com/en/we-re-jammin/" />
+<meta property="og:site_name" content="Lakruzz - Personal blog by Lars Kruse" />
+<meta property="og:image" content="https://www.lakruzz.com/images/blog/jeg-er-her-endnu/heart-before-and-after.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-11-10T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@lakruzz" />
+<meta name="twitter:creator" content="@lakruzz" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"https://www.lakruzz.com/en/we-re-jammin/","image":"https://www.lakruzz.com/images/blog/jeg-er-her-endnu/heart-before-and-after.jpg","author":{"@type":"Person","name":"lakruzz"},"headline":"Why your web site should run on JAM rather than LAMP","description":"We’re jammin’. I want to jam it with you, we’re jammin’ and I hope you like jammin’ too. Ain’t no rules, ain’t no vow, you can do it anyhow ‘cause I and I will see you through. But every day we pay the price, come a little sacrifice; Jammin’ till the jam is through.","datePublished":"2019-11-10T00:00:00+01:00","dateModified":"2019-11-10T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.lakruzz.com/en/we-re-jammin/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="twitter:image" content="https://www.lakruzz.com/images/blog/jeg-er-her-endnu/heart-before-and-after.jpg"/>
+
+  </head>
+
+
+  <body>
+
+        <header>
+      <div class="inner">
+        <h1>Lakruzz</h1>
+        <h2>Blogs by Lars Kruse</h2>
+        <!--a href="https://github.com/lakruzz/lakruzz.github.io" class="button" target="_blank"><small>This page is hosted at GitHub pages from the <span style="color:#fe950d;">Lakruzz</span> repo</small></a-->
+        <a class="menu" href="/">Lakruzz</a>
+        <a class="menu" href="/posts">Blog</a>
+        <a class="menu" href="/en/wolfware-republished">WolfWare</a>
+      </div>
+    </header>
+
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+          <strong>Category</strong>
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+                  <em><span title="Articles, blogs, ideas etc written in English">Blogs in English</span></em>&nbsp;&nbsp;
+                 
+              
+            <br/>
+          <strong>By:&nbsp;</strong>
+            <em>lakruzz</em>&nbsp;&nbsp;
+          <br/>
+          <strong> On:</strong>
+          Sunday, November 10. 2019<br/>
+          <strong>Tags:&nbsp;|</strong>
+          
+            <a href="/tags/#JAM stack">JAM stack</a>&nbsp;|&nbsp;
+          
+            <a href="/tags/#LAMP stack">LAMP stack</a>&nbsp;|&nbsp;
+          
+            <a href="/tags/#Static web site">Static web site</a>&nbsp;|&nbsp;
+          
+        <br/>
+
+          <h1>Why your web site should run on JAM rather than LAMP</h1>
+
+          <p class="kicker">We’re jammin’. I want to jam it with you, we’re jammin’ and I hope you like jammin’ too. Ain’t no rules, ain’t no vow, you can do it anyhow ‘cause I and I will see you through. But every day we pay the price, come a little sacrifice; Jammin’ till the jam is through.</p>
+
+<p class="kicker"><em>Quote: Bob Marley</em></p>
+
+<p>This blog is for you, who owns a website - or are about to get one - and who thinks that perhaps, the maintenance and development of it is a bit expensive, or error prune, or overly complex. The thing is, that most likely your website <em>stack<sup id="fnref:stack"><a href="#fn:stack" class="footnote">1</a></sup></em> is a thing of the past. You need to stay tuned here and lean the differences between a classical LAMP stack and and contemporary JAM stack. This learning might prove valuable to you. Enabling to be strategic about your choices in the future.</p>
+
+<p><em>- “Wait - hold on! JAM, LAMP you lost me there, I don’t know what any of them means?”</em></p>
+
+<p>Alright, so let’s look at it, as if you were comparing an electrical car to a conventional car with a classical combustion engine. They solve the same problem, to those who don’t care much you could even argue that even the solution to the problem is the same. Only when you look under the hood is it obvious that they are indeed <em>very</em> different. Some of you probably wonder if maybe combustion engines running on fossil fuel are a thing of the past and maybe electrical cars belong to the future?</p>
+
+<p>For the same reason, you need to know the difference between a LAMP stack and a static JAM stack.</p>
+
+<h1 id="a-lamp-stack-explained">A LAMP stack explained</h1>
+
+<p>LAMP is a contraction of the first letters of the names in one of the most popular tool stacks in IT history:</p>
+
+<ul>
+  <li><strong>Linux</strong> <em>Operating system</em></li>
+  <li><strong>Apache</strong> <em>web server</em></li>
+  <li><strong>MySql</strong> <em>Relational database</em></li>
+  <li><strong>PHP</strong> <em>Domain specific programming language, designed specifically for server side scripting of web sites</em></li>
+</ul>
+
+<p>We owe this stack a lot. There’s almost nothing that you can not do on this stack. It’s like a Swiss army knife. I has been the pet stack since well, <em>forever (roughly 1995)<sup id="fnref:forever"><a href="#fn:forever" class="footnote">2</a></sup></em>.</p>
+
+<p>Back in 1995 the internet was slow, servers were expensive, CPU power was limited and so was RAM, storage was expensive, browsers and frontend technology were immature, client-side scripting such as JavaScript was non-existent. The cloud as we know it did not exist. These were the challenges of the time that gave birth to the LAMP stack. And boy, did it kick ass! The LAMP stack was to the development of the internet, what the Ford T was to human transportation.</p>
+
+<p>All the tools in the LAMP stack are Open Source which means that it’s completely free of charge - at least when it comes to license cost. However, like a combustion engine, it turns out that with so many moving parts in the equation things get’s complicated quite fast. Syncing up, inter-compatibility, finding a server to host it on, upsizing when it runs out of resources etc. At the end of the day it may be free, but the cost of ownership is not necessarily cheep.</p>
+
+<h2 id="how-a-lamp-stack-works">How a LAMP stack works</h2>
+
+<p>From the end-user’s point of view, we’re presented with a “website”. We know websites as something that must be opened in a <em>web browser</em> which is a client tool, that understands the protocols of the internet, of which <code class="highlighter-rouge">HTML</code> (<em>Hyper Text Markup Language</em>) is the king of ‘em all. <code class="highlighter-rouge">HTTP</code> is brought to the client using <code class="highlighter-rouge">HTTP</code> (<em>Hyper Text Transfer Protocol</em>). In modern world that protocol would be made secure (encrypted) and therefore it would most likely be <code class="highlighter-rouge">HTTPS</code>. If your website isn’t using <code class="highlighter-rouge">HTTPS</code> yet you should get it fixed <code class="highlighter-rouge">ASAP</code> (<em>As Soon As Possible</em> …not necessarily internet related).</p>
+
+<p>This <code class="highlighter-rouge">HTML</code> back and forth using <code class="highlighter-rouge">HTTP</code> and <code class="highlighter-rouge">HTTPS</code> is what <strong>Apache</strong> is taking care of.</p>
+
+<p>But hey! On a LAMP stack it’s most likely that the <code class="highlighter-rouge">HTML</code> page that your browser is displaying isn’t really there - yet. It’s more likely that your entry point on the server is actually a computer program  - written in <strong>PHP</strong>, that queries the database <strong>MySql</strong> for the content of the website and then merges it into the actual design template of the website, eventually generating the <code class="highlighter-rouge">HTML</code> that the the client browser requires.</p>
+
+<p>This approach was really clever - separating <em>what</em> from <em>how</em> has always been an important principle in programming - divide and concur; Let PHP take care of the design and let MySql take care of the content.</p>
+
+<p>But hey it’s all quite complicated, so obviously we developed systems - content management systems (CMS) - that would make design more like playing with lego blocks and content nothing but text snippets back and forth - essentially hiding but PHP and MySql from the content managers.</p>
+
+<p>As the internet became more and more complex with demands for SEO (<em>Search Engine Optimization</em>), AJAX, Client side scripting. CSS (Cascading Style Sheets), and instead of generating all this <code class="highlighter-rouge">HTML</code> over and over again, CMS systems optimize it by building up caches, for the sake of optimization.</p>
+
+<p>These CMS just grew and grew - they kept on offering internet technology as <em>clicky-clicky-pointy-pointy</em> grapical user interfaces, essentially hiding the technology underneath, unless you are one of the chosen few web developers that were supposed to understand the bits and parts of how the internet was essentially constructed.</p>
+
+<p>You may know these CMS as <strong>Wordpress</strong>, <strong>Drupal</strong>, <strong>Joomla</strong>, <strong>SiteCore</strong>, <strong>Concrete5</strong>, <strong>Umbraco</strong>, <strong>Shopify</strong> etc. The vast majority of these are based on a LAMP stack or a conceptually similar stack based on the holy trinity of</p>
+
+<ul>
+  <li>a webserver</li>
+  <li>a server-side scripting language</li>
+  <li>a database</li>
+</ul>
+
+<h1 id="jam-stack-explained">JAM stack explained</h1>
+
+<p>JAM is also a contraction of the first letters of the tools - <em>and generic technologies</em> in the stack:</p>
+
+<ul>
+  <li><strong>JavaScript</strong> <em>also a domain specific language scripting, designed specifically for client side scripting of websites</em></li>
+  <li><strong>APIs</strong> <em>Application Programmer Interfaces</em></li>
+  <li><strong>MarkDown</strong> <em>The World’s simplest MarkUp language - A drilled down version - hence the name</em></li>
+</ul>
+
+<p>It’s important to understand that LAMP vs JAM isn’t just a battle of tool stacks. The underlying technologies are as different as combustion engines and electrical engines. They solve the same problem, through completely different means.</p>
+
+<p>JAM stacks are also sometimes referred to as <em>static web sites</em>. Hereby indicating that the <code class="highlighter-rouge">HTML</code> on the web server is not generated on-thy-fly by a server-side programming language and a database in combination as it happens on a LAMP stack. Instead <em>all</em> the <code class="highlighter-rouge">HTML</code> pages are statically generated through a compile process and then pushed to the web server simply as static done-and-ready-to-use files.</p>
+
+<p>The content (<em>what</em>) is still separated from the design (<em>how</em>) but in this case it’s stored in <strong>MarkDown</strong> files. MarkDown is a <em>MarkUp</em> notation - like <code class="highlighter-rouge">HTML</code> itself, but where <code class="highlighter-rouge">HTML</code> is specifically designed to be read and parsed by machines, MarkDown is so simple, that anyone can learn it in 15 minutes, and it’s easy readable to humans. I’m writing this blog post now in MarkDown.</p>
+
+<p>There is no Database on the server, and there is no server-side scripting language available. All the dynamics of a website are handled by JavaScript on the client - the web browser - or through services on the internet integrated through APIs - most commonly <code class="highlighter-rouge">REST API</code> or <code class="highlighter-rouge">GraphQL API</code> communicating in <code class="highlighter-rouge">JSON</code> (<em>JavaScript Object Notation</em>).</p>
+
+<p>JAM stacks are not a result of the technology that was available in 1995. JAM stacks are calved from cloud technologies. JAM stacks runs on <em>services</em>, not <em>servers</em>. They are <em>serverless</em>.</p>
+
+<p>It’s <em>Infrastructure as a Service</em>.</p>
+
+<h2 id="how-a-jam-stack-works">How a JAM stack works</h2>
+
+<p>In many ways the development processes are comparable. On both stacks we’re creating content and design through different processes, one is meant for content managers the other is meant for web designers. In both stack we’re trying to reuse as much as possible through means of plugin and extension technologies.</p>
+
+<p>But where a LAMP stack is designed to build the <code class="highlighter-rouge">HTML</code> on-the-fly when someone needs it, the JAM stack generates <em>all possible</em> <code class="highlighter-rouge">HTML</code> pages up front every time any of the content managers and or designers are done with a new snippet.</p>
+
+<p>When a web browser on the client requests some <code class="highlighter-rouge">HTML</code> it’s simply delivered instantly. The server is diminished to a simple <em>web service</em>; It can’t really do anything in terms of computation, semantical logic, database queries or the like. If something like that is needed, it’s expected to be available somewhere else on the internet, accessible to us through an API which communicates in <code class="highlighter-rouge">JSON</code> the de facto protocol JavaScript uses to stream data between systems. JavaScript runs on the client side in the web browser.</p>
+
+<p>Say that we actually need to provide something like that - what is traditionally known as server capacity. Say like an actual database that allows us to store data about our users, products, objects, entities or if we want to pull data from other systems like book keeping, user authentication with Facebook, Google or what have you. If that is the case, then we will use either existing services, or create our own <em>services</em>[^create-you-own-service] - not <em>servers</em>.</p>
+
+<p>At the end of the day, we end up with the same Swiss army knife; There is nothing that this stack can not do for us, but we have magically removed the servers from the equation. We do no longer own any infrastructure. The infrastructure has been replaced with a snippet of computer program utilizing <em>services</em>.</p>
+
+<p>The infrastructure is programmable and serverless.</p>
+
+<p>There are quite many different JAM</p>
+
+<h1 id="ok-so-why-do-i-care-if-its-one-or-the-other">OK, so why do I care if it’s one or the other?</h1>
+
+<p>First of all, there’s the total cost of ownership. Staying with the car metaphor, we don’t own the car, we’re leasing it.</p>
+
+<p><em>“Hmmm!”</em> You might argue that you can also lease a conventional car - or a Wordpress instance - <em>“so why do I care?”</em>.</p>
+
+<p>And that’s true. But if you get an electrical car you’ll learn that there isn’t really any service interval on the engine; no plugs, no oil filter, not even any engine oil, there’s no timing belt, no V-belt, no heat exchanger filled with fluid coolant. So even if you managed to get a service deal on your combustion engine, taking care of it all at a fixed price per interval. The fact remains that you wouldn’t have these expenses at all on an electrical car.</p>
+
+<p>It’s the same with a JAM stack compared to a LAMP stack. The number of moving parts are simply brought to an absolute minimum. Simply through use of contemporary technology as opposed to 25 year old technology.</p>
+
+<h2 id="devops-continuous-delivery-and-all-that-jazz">DevOps, Continuous Delivery …and All That Jazz</h2>
+<p>Looking at what’s novel and desirable in general in the current world of Software Development the JAM stack offers easy access to it all:</p>
+
+<ul>
+  <li><strong>DevOps</strong> Development and (System) Operations contracted into one word, meaning that there are no silos in team efforts, The infrastructure is also the team’s responsibility Ops are not hidden away in the basements, they are first class team members. Making infrastructure programmable and immutable.</li>
+  <li><strong>Continuous Delivery</strong> as in lean; Build quality in, deliver feature directly to production.</li>
+  <li><strong>Build Pipelines</strong> Implement the product’s definition of done as a pieces of code, and execute it automatically on even the smallest change committed.</li>
+  <li><strong>GitOps</strong> At the foundation of it all is the distributed version control system Git. When changes are added to git and as they are promoted using branches, pull requests, tags and signatures it automatically triggers various flows in the pipelines. No one needs to do anything, it’s all automated.</li>
+  <li><strong>Production-like environments</strong> The developers, the testers, the stage users, the end-users should all use similar environments, therefore we need a way to spin up almost infinite numbers of production-like environments. What good is one or two LAMP stacks - when I, and all the automated processes need at least 10 to verify that we’re truly done?</li>
+  <li><strong>Anything as code</strong> “Anything” in this context being matters like <em>configuration</em>, <em>tests</em>, <em>infrastructure</em>, <em>pipelines</em>  etc. Having it “as code” means that it’s persisted in mergeable files (as opposed to databases or binary files) so that it can be version controlled and immutably executed to yield the same result given the same conditions. Having “anything” as code means that “anything” can by automated.</li>
+</ul>
+
+<p>All of these highly desirable and contemporary principles are available almost out of the box using a JAM stack.</p>
+
+<h3 id="lets-walk-through-this-webpage-as-an-example">Let’s walk through this webpage as an example</h3>
+
+<p>The entire code base for the website lives inside a git repository, given sufficient access rights all I need to do is to run <code class="highlighter-rouge">git clone</code> on my PC to get all the code and alter it. If I’m not a developer but a content manager, I’ll just browse to the online MarkDown Content management system at <code class="highlighter-rouge">prose.io</code>.</p>
+
+<p>When I’ve made a change I’ll compile and see the result only seconds later in a <code class="highlighter-rouge">docker container</code> - If you are unfamiliar with Docker then think of it as a simple lightweight variant of a virtual machine. Given that I have Docker installed on my machine, in can use it to run <em>any</em> program on my local computer, without actually installing that program. But simply by running it in a <code class="highlighter-rouge">container</code> So I don’t even need to have the JAM stack installed, in order to run the JAM stack (<em>wow!</em>) I can simulate the full fledged behavior of my entire application of web site, without even being connected to the internet (<em>Woooooow!</em>).</p>
+
+<p>When I like what I see, I <code class="highlighter-rouge">commit</code>to git and <code class="highlighter-rouge">push</code> to GitHub.</p>
+
+<p>I have <code class="highlighter-rouge">Circel CI</code> waiting and watching - if you con’t know Circle CI, think of it as a host of robots sitting on the internet waiting for instructions from me. Circle CI is immediately notified that something has change in the code - and it starts the <em>build pipeline</em> that corresponds to the context (could be <em>development</em>) in git. Circle CI executes the entire Definition of Done, and if - and only if _ it is successful it will promote the code in Git (could be from <em>development</em> to <em>master</em> indicating that it’s ready for release on stage).</p>
+
+<p>The automated promotion triggeers a new event, that triggers Circle CI again. This time only to run the next level of Definition of Done, that corresponds to releasing to stage. If all is successful, the web site is automatically deployed to the stage environment. Now its live and my stage users can see it.</p>
+
+<p>The stage users is most likely the customer, sneak peaking. If they are satisfied then it is turned into a <code class="highlighter-rouge">released</code> in git, marking it with a <code class="highlighter-rouge">semantic versioning</code> tag. As you have probably guessed by now, this triggers Circle CI again, this time to release it automatically into production. You see what happened? If the code that was submitted to the <code class="highlighter-rouge">development</code> context, prove to meet the various definitions of done on it’s path to produktion, it’s automtically delivered - to production.</p>
+
+<h1 id="can-i-try-it">Can I try it?</h1>
+
+<p>Yes!</p>
+
+<p>I know a small place, the home of the yipees, where they run a campaign: For the price of DKK 4.995 (≈ EUR 670) they offer to set up the whole shebang once and for all, based on Jekyll ( the JAM stack which GitHub created to run their <em>GitHub Pages</em>) and Liquid (The template language developed by Shopify to accommodate the worlds second largest eCommerce platform) using a design template of your own choice (there are 100’s to choose from).</p>
+
+<p>After that you are ready to add your own content.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:stack">
+      <p><em>Stack</em> is IT jagon for the combined set of tools and technologies that are used to run your product - in this case your website. <a href="#fnref:stack" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:forever">
+      <p>MySql, Apache and PHP are all from 1995. Linux itself is from 1991. <a href="#fnref:forever" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+
+        </section>
+          <aside id="sidebar">
+            
+    
+      
+    
+      
+    
+      
+    
+      
+        <div style="padding-bottom:15px;"><a name="en"></a>
+          <b><span title="Articles, blogs, ideas etc written in English">Blogs in English<span></b>
+          
+            
+                <div class="list"><a title="" href=""></a></div>
+            
+          
+            
+                <div class="list"><a title="Sunday November 10. 2019" href="/en/we-re-jammin/">Why your web site should run on JAM rather than LAMP</a></div>
+            
+                <div class="list"><a title="Saturday March 3. 2018" href="/en/docker-jekyll/">Docker Jekyll - 5 easy steps</a></div>
+            
+                <div class="list"><a title="Saturday February 3. 2018" href="/en/dorith/">The DORITH principle</a></div>
+            
+                <div class="list"><a title="Tuesday December 29. 2015" href="/en/wolfware-republished/">WolfWare - 2016 Republish Preface</a></div>
+            
+                <div class="list"><a title="Saturday December 27. 2014" href="/en/kovalam+tourist+anywhere/">Kovalam - Tourist Anywhere</a></div>
+            
+                <div class="list"><a title="Friday December 19. 2014" href="/en/dewalokam+day+5/">Goodbye Dewalokam</a></div>
+            
+                <div class="list"><a title="Thursday December 18. 2014" href="/en/dewalokam+day+4/">Tea plantations - goddamit</a></div>
+            
+                <div class="list"><a title="Wednesday December 17. 2014" href="/en/dewalokam+day+3/">Tuk tuks and public roller coaster</a></div>
+            
+                <div class="list"><a title="Tuesday December 16. 2014" href="/en/dewalokam+day+2/">Interesting Danish accent</a></div>
+            
+                <div class="list"><a title="Monday December 15. 2014" href="/en/cochin-dewalokam/">Very very welcome to Dewalokam</a></div>
+            
+          
+        </div>
+      
+    
+
+    
+      
+    
+      
+    
+      
+        <div style="padding-bottom:15px;"><a name="da"></a>
+          <b><span title="Artikler, blogs, ideer osv skrevet på dansk.">Blogs på dansk<span></b>
+          
+            
+                <div class="list"><a title="" href=""></a></div>
+            
+          
+            
+                <div class="list"><a title="Friday August 24. 2018" href="/da/ikke-lyst-til-at-do/">Jeg har ikke lyst til at dø</a></div>
+            
+                <div class="list"><a title="Sunday July 1. 2018" href="/da/jeg-er-her-endnu/">Jeg er her endnu</a></div>
+            
+                <div class="list"><a title="Saturday May 7. 2016" href="/da/code+devops+paradigmeskift/">Et Paradigmeskift inden for softwareudvikling</a></div>
+            
+                <div class="list"><a title="Wednesday December 24. 2014" href="/da/christmas+in+cochin/">Jul i Cochin</a></div>
+            
+          
+        </div>
+      
+    
+      
+    
+
+
+
+
+    
+          </aside>
+
+        <script src="https://apis.google.com/js/plusone.js"></script>
+<script>
+  document.write(
+    '<div class="g-comments"'+
+    '  data-href="' + document.URL + '"'+
+    '  data-width="642"'+
+    '  data-first_party_property="BLOGGER"'+
+    '  data-view_type="FILTERED_POSTMOD">'+
+    '</div>'
+  )
+</script>
+
+
+      </div>
+    </div>
+  </body>
+</html>

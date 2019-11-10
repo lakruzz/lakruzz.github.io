@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://www.lakruzz.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.lakruzz.com/" rel="alternate" type="text/html" /><updated>2019-11-10T23:13:58+01:00</updated><id>https://www.lakruzz.com/feed.xml</id><title type="html">Lakruzz - Personal blog by Lars Kruse</title><author><name>lakruzz</name></author><entry><title type="html">Why your web site should run on JAM rather than LAMP</title><link href="https://www.lakruzz.com/en/we-re-jammin/" rel="alternate" type="text/html" title="Why your web site should run on JAM rather than LAMP" /><published>2019-11-10T00:00:00+01:00</published><updated>2019-11-10T00:00:00+01:00</updated><id>https://www.lakruzz.com/en/we-re-jammin</id><content type="html" xml:base="https://www.lakruzz.com/en/we-re-jammin/">&lt;p class=&quot;kicker&quot;&gt;We’re jammin’. I want to jam it with you, we’re jammin’ and I hope you like jammin’ too. Ain’t no rules, ain’t no vow, you can do it anyhow ‘cause I and I will see you through. But every day we pay the price, come a little sacrifice; Jammin’ till the jam is through.&lt;/p&gt;
+
+&lt;p class=&quot;kicker&quot;&gt;&lt;em&gt;Quote: Bob Marley&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This blog is for you, who owns a website - or are about to get one - and who thinks that perhaps, the maintenance and development of it is a bit expensive, or error prune, or overly complex. The thing is, that most likely your website &lt;em&gt;stack&lt;sup id=&quot;fnref:stack&quot;&gt;&lt;a href=&quot;#fn:stack&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; is a thing of the past. You need to stay tuned here and lean the differences between a classical LAMP stack and and contemporary JAM stack. This learning might prove valuable to you. Enabling to be strategic about your choices in the future.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;- “Wait - hold on! JAM, LAMP you lost me there, I don’t know what any of them means?”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Alright, so let’s look at it, as if you were comparing an electrical car to a conventional car with a classical combustion engine. They solve the same problem, to those who don’t care much you could even argue that even the solution to the problem is the same. Only when you look under the hood is it obvious that they are indeed &lt;em&gt;very&lt;/em&gt; different. Some of you probably wonder if maybe combustion engines running on fossil fuel are a thing of the past and maybe electrical cars belong to the future?&lt;/p&gt;
+
+&lt;p&gt;For the same reason, you need to know the difference between a LAMP stack and a static JAM stack.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-lamp-stack-explained&quot;&gt;A LAMP stack explained&lt;/h1&gt;
+
+&lt;p&gt;LAMP is a contraction of the first letters of the names in one of the most popular tool stacks in IT history:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt; &lt;em&gt;Operating system&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Apache&lt;/strong&gt; &lt;em&gt;web server&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;MySql&lt;/strong&gt; &lt;em&gt;Relational database&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PHP&lt;/strong&gt; &lt;em&gt;Domain specific programming language, designed specifically for server side scripting of web sites&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We owe this stack a lot. There’s almost nothing that you can not do on this stack. It’s like a Swiss army knife. I has been the pet stack since well, &lt;em&gt;forever (roughly 1995)&lt;sup id=&quot;fnref:forever&quot;&gt;&lt;a href=&quot;#fn:forever&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Back in 1995 the internet was slow, servers were expensive, CPU power was limited and so was RAM, storage was expensive, browsers and frontend technology were immature, client-side scripting such as JavaScript was non-existent. The cloud as we know it did not exist. These were the challenges of the time that gave birth to the LAMP stack. And boy, did it kick ass! The LAMP stack was to the development of the internet, what the Ford T was to human transportation.&lt;/p&gt;
+
+&lt;p&gt;All the tools in the LAMP stack are Open Source which means that it’s completely free of charge - at least when it comes to license cost. However, like a combustion engine, it turns out that with so many moving parts in the equation things get’s complicated quite fast. Syncing up, inter-compatibility, finding a server to host it on, upsizing when it runs out of resources etc. At the end of the day it may be free, but the cost of ownership is not necessarily cheep.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-a-lamp-stack-works&quot;&gt;How a LAMP stack works&lt;/h2&gt;
+
+&lt;p&gt;From the end-user’s point of view, we’re presented with a “website”. We know websites as something that must be opened in a &lt;em&gt;web browser&lt;/em&gt; which is a client tool, that understands the protocols of the internet, of which &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; (&lt;em&gt;Hyper Text Markup Language&lt;/em&gt;) is the king of ‘em all. &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTP&lt;/code&gt; is brought to the client using &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTP&lt;/code&gt; (&lt;em&gt;Hyper Text Transfer Protocol&lt;/em&gt;). In modern world that protocol would be made secure (encrypted) and therefore it would most likely be &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTPS&lt;/code&gt;. If your website isn’t using &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTPS&lt;/code&gt; yet you should get it fixed &lt;code class=&quot;highlighter-rouge&quot;&gt;ASAP&lt;/code&gt; (&lt;em&gt;As Soon As Possible&lt;/em&gt; …not necessarily internet related).&lt;/p&gt;
+
+&lt;p&gt;This &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; back and forth using &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTP&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTPS&lt;/code&gt; is what &lt;strong&gt;Apache&lt;/strong&gt; is taking care of.&lt;/p&gt;
+
+&lt;p&gt;But hey! On a LAMP stack it’s most likely that the &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; page that your browser is displaying isn’t really there - yet. It’s more likely that your entry point on the server is actually a computer program  - written in &lt;strong&gt;PHP&lt;/strong&gt;, that queries the database &lt;strong&gt;MySql&lt;/strong&gt; for the content of the website and then merges it into the actual design template of the website, eventually generating the &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; that the the client browser requires.&lt;/p&gt;
+
+&lt;p&gt;This approach was really clever - separating &lt;em&gt;what&lt;/em&gt; from &lt;em&gt;how&lt;/em&gt; has always been an important principle in programming - divide and concur; Let PHP take care of the design and let MySql take care of the content.&lt;/p&gt;
+
+&lt;p&gt;But hey it’s all quite complicated, so obviously we developed systems - content management systems (CMS) - that would make design more like playing with lego blocks and content nothing but text snippets back and forth - essentially hiding but PHP and MySql from the content managers.&lt;/p&gt;
+
+&lt;p&gt;As the internet became more and more complex with demands for SEO (&lt;em&gt;Search Engine Optimization&lt;/em&gt;), AJAX, Client side scripting. CSS (Cascading Style Sheets), and instead of generating all this &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; over and over again, CMS systems optimize it by building up caches, for the sake of optimization.&lt;/p&gt;
+
+&lt;p&gt;These CMS just grew and grew - they kept on offering internet technology as &lt;em&gt;clicky-clicky-pointy-pointy&lt;/em&gt; grapical user interfaces, essentially hiding the technology underneath, unless you are one of the chosen few web developers that were supposed to understand the bits and parts of how the internet was essentially constructed.&lt;/p&gt;
+
+&lt;p&gt;You may know these CMS as &lt;strong&gt;Wordpress&lt;/strong&gt;, &lt;strong&gt;Drupal&lt;/strong&gt;, &lt;strong&gt;Joomla&lt;/strong&gt;, &lt;strong&gt;SiteCore&lt;/strong&gt;, &lt;strong&gt;Concrete5&lt;/strong&gt;, &lt;strong&gt;Umbraco&lt;/strong&gt;, &lt;strong&gt;Shopify&lt;/strong&gt; etc. The vast majority of these are based on a LAMP stack or a conceptually similar stack based on the holy trinity of&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a webserver&lt;/li&gt;
+  &lt;li&gt;a server-side scripting language&lt;/li&gt;
+  &lt;li&gt;a database&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;jam-stack-explained&quot;&gt;JAM stack explained&lt;/h1&gt;
+
+&lt;p&gt;JAM is also a contraction of the first letters of the tools - &lt;em&gt;and generic technologies&lt;/em&gt; in the stack:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt; &lt;em&gt;also a domain specific language scripting, designed specifically for client side scripting of websites&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;APIs&lt;/strong&gt; &lt;em&gt;Application Programmer Interfaces&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;MarkDown&lt;/strong&gt; &lt;em&gt;The World’s simplest MarkUp language - A drilled down version - hence the name&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It’s important to understand that LAMP vs JAM isn’t just a battle of tool stacks. The underlying technologies are as different as combustion engines and electrical engines. They solve the same problem, through completely different means.&lt;/p&gt;
+
+&lt;p&gt;JAM stacks are also sometimes referred to as &lt;em&gt;static web sites&lt;/em&gt;. Hereby indicating that the &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; on the web server is not generated on-thy-fly by a server-side programming language and a database in combination as it happens on a LAMP stack. Instead &lt;em&gt;all&lt;/em&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; pages are statically generated through a compile process and then pushed to the web server simply as static done-and-ready-to-use files.&lt;/p&gt;
+
+&lt;p&gt;The content (&lt;em&gt;what&lt;/em&gt;) is still separated from the design (&lt;em&gt;how&lt;/em&gt;) but in this case it’s stored in &lt;strong&gt;MarkDown&lt;/strong&gt; files. MarkDown is a &lt;em&gt;MarkUp&lt;/em&gt; notation - like &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; itself, but where &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; is specifically designed to be read and parsed by machines, MarkDown is so simple, that anyone can learn it in 15 minutes, and it’s easy readable to humans. I’m writing this blog post now in MarkDown.&lt;/p&gt;
+
+&lt;p&gt;There is no Database on the server, and there is no server-side scripting language available. All the dynamics of a website are handled by JavaScript on the client - the web browser - or through services on the internet integrated through APIs - most commonly &lt;code class=&quot;highlighter-rouge&quot;&gt;REST API&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;GraphQL API&lt;/code&gt; communicating in &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt; (&lt;em&gt;JavaScript Object Notation&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;JAM stacks are not a result of the technology that was available in 1995. JAM stacks are calved from cloud technologies. JAM stacks runs on &lt;em&gt;services&lt;/em&gt;, not &lt;em&gt;servers&lt;/em&gt;. They are &lt;em&gt;serverless&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;It’s &lt;em&gt;Infrastructure as a Service&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-a-jam-stack-works&quot;&gt;How a JAM stack works&lt;/h2&gt;
+
+&lt;p&gt;In many ways the development processes are comparable. On both stacks we’re creating content and design through different processes, one is meant for content managers the other is meant for web designers. In both stack we’re trying to reuse as much as possible through means of plugin and extension technologies.&lt;/p&gt;
+
+&lt;p&gt;But where a LAMP stack is designed to build the &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; on-the-fly when someone needs it, the JAM stack generates &lt;em&gt;all possible&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; pages up front every time any of the content managers and or designers are done with a new snippet.&lt;/p&gt;
+
+&lt;p&gt;When a web browser on the client requests some &lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt; it’s simply delivered instantly. The server is diminished to a simple &lt;em&gt;web service&lt;/em&gt;; It can’t really do anything in terms of computation, semantical logic, database queries or the like. If something like that is needed, it’s expected to be available somewhere else on the internet, accessible to us through an API which communicates in &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt; the de facto protocol JavaScript uses to stream data between systems. JavaScript runs on the client side in the web browser.&lt;/p&gt;
+
+&lt;p&gt;Say that we actually need to provide something like that - what is traditionally known as server capacity. Say like an actual database that allows us to store data about our users, products, objects, entities or if we want to pull data from other systems like book keeping, user authentication with Facebook, Google or what have you. If that is the case, then we will use either existing services, or create our own &lt;em&gt;services&lt;/em&gt;[^create-you-own-service] - not &lt;em&gt;servers&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;At the end of the day, we end up with the same Swiss army knife; There is nothing that this stack can not do for us, but we have magically removed the servers from the equation. We do no longer own any infrastructure. The infrastructure has been replaced with a snippet of computer program utilizing &lt;em&gt;services&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The infrastructure is programmable and serverless.&lt;/p&gt;
+
+&lt;p&gt;There are quite many different JAM&lt;/p&gt;
+
+&lt;h1 id=&quot;ok-so-why-do-i-care-if-its-one-or-the-other&quot;&gt;OK, so why do I care if it’s one or the other?&lt;/h1&gt;
+
+&lt;p&gt;First of all, there’s the total cost of ownership. Staying with the car metaphor, we don’t own the car, we’re leasing it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Hmmm!”&lt;/em&gt; You might argue that you can also lease a conventional car - or a Wordpress instance - &lt;em&gt;“so why do I care?”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;And that’s true. But if you get an electrical car you’ll learn that there isn’t really any service interval on the engine; no plugs, no oil filter, not even any engine oil, there’s no timing belt, no V-belt, no heat exchanger filled with fluid coolant. So even if you managed to get a service deal on your combustion engine, taking care of it all at a fixed price per interval. The fact remains that you wouldn’t have these expenses at all on an electrical car.&lt;/p&gt;
+
+&lt;p&gt;It’s the same with a JAM stack compared to a LAMP stack. The number of moving parts are simply brought to an absolute minimum. Simply through use of contemporary technology as opposed to 25 year old technology.&lt;/p&gt;
+
+&lt;h2 id=&quot;devops-continuous-delivery-and-all-that-jazz&quot;&gt;DevOps, Continuous Delivery …and All That Jazz&lt;/h2&gt;
+&lt;p&gt;Looking at what’s novel and desirable in general in the current world of Software Development the JAM stack offers easy access to it all:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;DevOps&lt;/strong&gt; Development and (System) Operations contracted into one word, meaning that there are no silos in team efforts, The infrastructure is also the team’s responsibility Ops are not hidden away in the basements, they are first class team members. Making infrastructure programmable and immutable.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Continuous Delivery&lt;/strong&gt; as in lean; Build quality in, deliver feature directly to production.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Build Pipelines&lt;/strong&gt; Implement the product’s definition of done as a pieces of code, and execute it automatically on even the smallest change committed.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;GitOps&lt;/strong&gt; At the foundation of it all is the distributed version control system Git. When changes are added to git and as they are promoted using branches, pull requests, tags and signatures it automatically triggers various flows in the pipelines. No one needs to do anything, it’s all automated.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Production-like environments&lt;/strong&gt; The developers, the testers, the stage users, the end-users should all use similar environments, therefore we need a way to spin up almost infinite numbers of production-like environments. What good is one or two LAMP stacks - when I, and all the automated processes need at least 10 to verify that we’re truly done?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Anything as code&lt;/strong&gt; “Anything” in this context being matters like &lt;em&gt;configuration&lt;/em&gt;, &lt;em&gt;tests&lt;/em&gt;, &lt;em&gt;infrastructure&lt;/em&gt;, &lt;em&gt;pipelines&lt;/em&gt;  etc. Having it “as code” means that it’s persisted in mergeable files (as opposed to databases or binary files) so that it can be version controlled and immutably executed to yield the same result given the same conditions. Having “anything” as code means that “anything” can by automated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All of these highly desirable and contemporary principles are available almost out of the box using a JAM stack.&lt;/p&gt;
+
+&lt;h3 id=&quot;lets-walk-through-this-webpage-as-an-example&quot;&gt;Let’s walk through this webpage as an example&lt;/h3&gt;
+
+&lt;p&gt;The entire code base for the website lives inside a git repository, given sufficient access rights all I need to do is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; on my PC to get all the code and alter it. If I’m not a developer but a content manager, I’ll just browse to the online MarkDown Content management system at &lt;code class=&quot;highlighter-rouge&quot;&gt;prose.io&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;When I’ve made a change I’ll compile and see the result only seconds later in a &lt;code class=&quot;highlighter-rouge&quot;&gt;docker container&lt;/code&gt; - If you are unfamiliar with Docker then think of it as a simple lightweight variant of a virtual machine. Given that I have Docker installed on my machine, in can use it to run &lt;em&gt;any&lt;/em&gt; program on my local computer, without actually installing that program. But simply by running it in a &lt;code class=&quot;highlighter-rouge&quot;&gt;container&lt;/code&gt; So I don’t even need to have the JAM stack installed, in order to run the JAM stack (&lt;em&gt;wow!&lt;/em&gt;) I can simulate the full fledged behavior of my entire application of web site, without even being connected to the internet (&lt;em&gt;Woooooow!&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;When I like what I see, I &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt;to git and &lt;code class=&quot;highlighter-rouge&quot;&gt;push&lt;/code&gt; to GitHub.&lt;/p&gt;
+
+&lt;p&gt;I have &lt;code class=&quot;highlighter-rouge&quot;&gt;Circel CI&lt;/code&gt; waiting and watching - if you con’t know Circle CI, think of it as a host of robots sitting on the internet waiting for instructions from me. Circle CI is immediately notified that something has change in the code - and it starts the &lt;em&gt;build pipeline&lt;/em&gt; that corresponds to the context (could be &lt;em&gt;development&lt;/em&gt;) in git. Circle CI executes the entire Definition of Done, and if - and only if _ it is successful it will promote the code in Git (could be from &lt;em&gt;development&lt;/em&gt; to &lt;em&gt;master&lt;/em&gt; indicating that it’s ready for release on stage).&lt;/p&gt;
+
+&lt;p&gt;The automated promotion triggeers a new event, that triggers Circle CI again. This time only to run the next level of Definition of Done, that corresponds to releasing to stage. If all is successful, the web site is automatically deployed to the stage environment. Now its live and my stage users can see it.&lt;/p&gt;
+
+&lt;p&gt;The stage users is most likely the customer, sneak peaking. If they are satisfied then it is turned into a &lt;code class=&quot;highlighter-rouge&quot;&gt;released&lt;/code&gt; in git, marking it with a &lt;code class=&quot;highlighter-rouge&quot;&gt;semantic versioning&lt;/code&gt; tag. As you have probably guessed by now, this triggers Circle CI again, this time to release it automatically into production. You see what happened? If the code that was submitted to the &lt;code class=&quot;highlighter-rouge&quot;&gt;development&lt;/code&gt; context, prove to meet the various definitions of done on it’s path to produktion, it’s automtically delivered - to production.&lt;/p&gt;
+
+&lt;h1 id=&quot;can-i-try-it&quot;&gt;Can I try it?&lt;/h1&gt;
+
+&lt;p&gt;Yes!&lt;/p&gt;
+
+&lt;p&gt;I know a small place, the home of the yipees, where they run a campaign: For the price of DKK 4.995 (≈ EUR 670) they offer to set up the whole shebang once and for all, based on Jekyll ( the JAM stack which GitHub created to run their &lt;em&gt;GitHub Pages&lt;/em&gt;) and Liquid (The template language developed by Shopify to accommodate the worlds second largest eCommerce platform) using a design template of your own choice (there are 100’s to choose from).&lt;/p&gt;
+
+&lt;p&gt;After that you are ready to add your own content.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:stack&quot;&gt;
+      &lt;p&gt;&lt;em&gt;Stack&lt;/em&gt; is IT jagon for the combined set of tools and technologies that are used to run your product - in this case your website. &lt;a href=&quot;#fnref:stack&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:forever&quot;&gt;
+      &lt;p&gt;MySql, Apache and PHP are all from 1995. Linux itself is from 1991. &lt;a href=&quot;#fnref:forever&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>{&quot;picture&quot;=&gt;&quot;/images/authors/lakruzz.png&quot;, &quot;twitter&quot;=&gt;&quot;lakruzz&quot;}</name></author><category term="JAM stack" /><category term="LAMP stack" /><category term="Static web site" /><summary type="html">We’re jammin’. I want to jam it with you, we’re jammin’ and I hope you like jammin’ too. Ain’t no rules, ain’t no vow, you can do it anyhow ‘cause I and I will see you through. But every day we pay the price, come a little sacrifice; Jammin’ till the jam is through.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/blog/jeg-er-her-endnu/heart-before-and-after.jpg" /></entry><entry><title type="html">Jeg har ikke lyst til at dø</title><link href="https://www.lakruzz.com/da/ikke-lyst-til-at-do/" rel="alternate" type="text/html" title="Jeg har ikke lyst til at dø" /><published>2018-08-24T00:00:00+02:00</published><updated>2018-08-24T00:00:00+02:00</updated><id>https://www.lakruzz.com/da/ikke-lyst-til-at-do</id><content type="html" xml:base="https://www.lakruzz.com/da/ikke-lyst-til-at-do/">&lt;p class=&quot;kicker&quot;&gt;Jeg har lyst til det hele i dag. Jeg har lyst til at ta’ en bid af alting.
+Og æde det hele fucking rub og stub. Jeg har ikke lyst til at dø&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Min forrige blog &lt;a href=&quot;../jeg-er-her-endnu&quot;&gt;&lt;em&gt;Jeg er her endnu&lt;/em&gt;&lt;/a&gt; sluttede hvor jeg netop havde fået en KAG hjerteoperation. Men også fået stillet i udsigt, at jeg skulle have én mere - eller måske en bypass operation - i løbet af et par måneder.&lt;/p&gt;
+
+&lt;p&gt;Én ting er at opleve en akut blodprop i hjertet, det giver stof til eftertanke. Men det er nu også forbundet med en hel del tankevirksomhed og eftertænksomhed, at gå og vente på en planlagt hjerteoperation.&lt;/p&gt;
+
+&lt;p&gt;Jeg fik min anden operation i foregårs. Nu er jeg på den anden side - af operationen.&lt;/p&gt;
+
+&lt;p&gt;Jeg er alene hjemme, alt ånder fred og ro, alle dørene i huset står vidtåbne og sensommeren strømmer ind. Jeg føler mig som genfødt, operationen forløb fuldstændigt ukompliceret. De havde ellers planlagt det helt tung skyts. Kirugen som opererede mig første gang akut havde prøvet at komme igennem den tillukkede kranspulsåre, men der var fuldstændig, helt og aldeles lukket.&lt;/p&gt;
+
+&lt;p&gt;For et par uger siden var jeg inde og blive CT scannet. Formålet var at se hvor stor en del af mit hjertevæv som var skadet eller gået til. Det giver ikke så meget mening at genetablere blodgennemstrømning til en del af hjertet som allerede er gået tabt. Scanningen viste, at ca 11% af mit hjerte havde iltmangel, men også at der formentlig endnu var liv i det hele blot i mindre grad.&lt;/p&gt;
+
+&lt;p&gt;Der var altså fint basis for at gå ind igen og åbne for den tillukkede kranspulsåre. Så denne gang  var der afsat 3 timer, det var planlagt at to kiruger skulle ind med hver sin wire samtidig. Den ene skulle gå via de helt tynde årer, som mit hjerte selv havde dannetved at forlænge spidserne af de alleryderste årer i de forgreninger der kommer fra en af de andre to kranspulsårer. Når de havde fundet vej skulle de kunne prikke, lirke og massere den totalt tillukkede åre åben fra hver sid side, med tykkere og tykkere wire, indtil det enten lykkedes, eller man måske måtte give op og planlægge en bypass operation i stedet.&lt;/p&gt;
+
+&lt;p&gt;Det var hvad jeg var blevet stillet i udsigt. Og det gik godt. Langt bedre end forudset faktisk.&lt;/p&gt;
+
+&lt;p&gt;Jeg fik åbnet i begge mine lysker og sprøjtet kontrastvæsken ind. På skærmen tonede en træstruktur frem.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Hmm, det ser da meget godt ud.”&lt;/em&gt; sagde kirugen. &lt;em&gt;“Det ser ud om der faktisk er en lille passage.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;På billedet hvor der var forventet en totalt tillukket åre kunne vi skimte en lille hårtynd streg.&lt;/p&gt;
+
+&lt;div class=&quot;pic caption center medium&quot;&gt;
+
+
+&lt;img src=&quot;/assets/responsive/1020/lakruzz-heart-before-after.png&quot; srcset=&quot;            /assets/responsive/255/lakruzz-heart-before-after.png 255w,            /assets/responsive/510/lakruzz-heart-before-after.png 510w,            /assets/responsive/1020/lakruzz-heart-before-after.png 1020w,    &quot; alt=&quot;Mit hjerte før og efter&quot; class=&quot;pic center medium&quot; /&gt;På det billedet til venstre, Ved den venstre grønne fil, kan man se en lille hårtynd streg. Her havde både den første kirug og CT scanningen konstateret at der var helt tillukket. På billedet til højre er der åbnet og indsat en stent.&lt;/div&gt;
+
+&lt;p&gt;Kirugen fortsatte med at arbejde alene og med den bløde undersøgelseswire som benyttes til injektion af kontrastvædske og helt ukomplicerede indgreb. Efter bare 30 minutter udbrød kirugen &lt;em&gt;“Så er vi igennem!”&lt;/em&gt;. Jeg fulgte med på skærmen da han lavede ballonudvidelsen. Det lignede et lille fyrværkeri da blodet begyndte at strømme fra kranpulsåren ud i de tynde forgreninger i den del af hjertet, der tidligere bare havde været forsynet af de små nødpassager, som mit hjerte selv havde lavet.&lt;/p&gt;
+
+&lt;p&gt;Selv kirugen var lidt forundret over den markante effekt: &lt;em&gt;“Det undrer mig nu, at du ikke har haft nogen symptomer overhovedet, jeg tror godt, at de folk du plejer at cykle mountainbike med, kan forvente en helt ny cykelpartner.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Der er bogstaveligt talt, faldet en sten fra mit hjerte.  Men jeg har også indset, at der er dele af mit liv, og den måde som jeg lever det på, som jeg skal tage fuld kontrol over og der er så uendeligt mange ting jeg stadig skal lære.&lt;/p&gt;
+
+&lt;h2 id=&quot;mit-hjerte---og-min-far&quot;&gt;Mit hjerte - og min far&lt;/h2&gt;
+
+&lt;p&gt;Da jeg skrev til min kollegaer hvad der var sket efter &lt;a href=&quot;../jeg-er-her-endnu&quot;&gt;den første blodprob&lt;/a&gt; for otte uger siden, og at jeg var indlagt op Rigshospitalet var der én af den som svarede noget i stil med: &lt;em&gt;“Riget! Så er du i de bedste hænder, du skal nok komme dig.”&lt;/em&gt; På mange måder beskriver den kommentar også meget godt min egen opfattelse af forløbet. Tænk engang, at man kan operere hjertet igennem et indgangshul i håndleddet eller lysken, mens patienten er ved fuld bevidsthed og selv kan følge med hele vejen på en skærm. Det er vildt at det kan lade sig gøre, men der er særlig én ting ved det, som har fyldt mig med eftertænksomhed.&lt;/p&gt;
+
+&lt;p&gt;Min far, Børge Kruse, døde da jeg var 5 år gammel, af en yderst agressiv hudkræft, som udviklede sig til lungekræft. Formentlig forårsaget af et uheld 7 år tidligere, på hans arbejdsplads Risø, hvor han var ansvarlig for isotoplaboratoriet&lt;sup id=&quot;fnref:maskinerne-i-haven&quot;&gt;&lt;a href=&quot;#fn:maskinerne-i-haven&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; og udviklingen af fosfor-32 (&lt;sup&gt;32&lt;/sup&gt;P), en radioaktiv isotop som har en halveringstid på bare 14 dage. Det samme radioative stof som man injekserer i patienter som mig.&lt;/p&gt;
+
+&lt;div class=&quot;pic caption center medium&quot;&gt;
+
+
+&lt;img src=&quot;/assets/responsive/1020/borge-kruse.png&quot; srcset=&quot;            /assets/responsive/255/borge-kruse.png 255w,            /assets/responsive/510/borge-kruse.png 510w,            /assets/responsive/1020/borge-kruse.png 1020w,    &quot; alt=&quot;Børge Kruse på Risø&quot; class=&quot;pic center medium&quot; /&gt;Celle indrettet til radiokemisk separation af &lt;sup&gt;32&lt;/sup&gt;P, som er en ren beta-emitter. Der behøves derfor kun en afskærmning af plexiglas for at beskytte personen mod strålingen. Forskeren på billedet er civilingeniør Børge Kruse, som var ansvarlig for en stor del af laboratoriets isotoparbejde i de første mange år. Isotoplaboratoriet leverede fra starten i 1959 store mængder såkaldt carrier-free &lt;sup&gt;32&lt;/sup&gt;P til undersøgelser af afgrøders næringsoptagelse både på Risøs egen Landbrugsforsøgsafdeling og dets statslige forsøgsvæsen.&lt;/div&gt;
+
+&lt;p&gt;Lidt vild tanke, som jeg ligger der med wire oppe i hjertet og følger med, at der eksisterer en så direkte reference til at det overhovedet kan lade sig gøre, og så det arbejde som min egen far, som jeg aldrig lærte at kende, var dedikeret til.&lt;/p&gt;
+
+&lt;h2 id=&quot;otte-uger&quot;&gt;Otte uger&lt;/h2&gt;
+
+&lt;p&gt;I udskrivelsespapiret noterede kirugen at han havde foretaget en fuldstændig almindelig, helt ukompliceret ballonudvidelse med stent. Men hvordan opstod den hårtynde passage i den mellemliggende periode? Var det den blodfortyndende medicin? Den megen motion? Mine ændrede kostvaner?&lt;/p&gt;
+
+&lt;p&gt;De her små otte uger, der er gået fra jeg røg ind med en blodprop og frem til nu, hvor mit hjerte er &lt;em&gt;clean as a whistle&lt;/em&gt;, tilbage på fuld kapacitet og uden iltunderskud har været en meget intens periode i mit liv.&lt;/p&gt;
+
+&lt;p&gt;Lad mig fortælle hvad der er sket i den mellemliggende periode, mellem de to operationer.&lt;/p&gt;
+
+&lt;p&gt;Så længe jeg kan huske tilbage, har jeg altid søgt plausible forklaringer på det jeg oplever og som jeg ikke umiddelbart forstår. I de situatinoer reageer jeg ved at skaffe mig noget viden om det. Måske en &lt;em&gt;occupational hazard&lt;/em&gt; fra mit virke som software-geek: &lt;em&gt;“Gi’ mig en manual, så skal vi nok få styr på det”.&lt;/em&gt; I den krise som blodproppen repræsenterede var den første neddykning i detaljen at lære mere om hjertets anatomi om hjertekarsygdomme, om det medicin man bruger og de operationer man tilbyder. Senere kom det uundgåeligt også til at handle om kolesterol, fedt, kost og levevis - og så naturligvis motion.&lt;/p&gt;
+
+&lt;p&gt;I resten af denne blog, vil jeg i en uordentlig associationsrække dele nogen af de indsigter - og plausible forklaringer - som jeg er kommert frem til, igennem mine mange &lt;em&gt;(mange)&lt;/em&gt; timers læsning af blogposts, artikler og forskninsrapporter altsammen tilgængeligt på internettet. Jeg har lavet en del henvisninger til der hvor jeg har fundet det, men noteapparatet er ikke komplet, så hvis du synes der mangler henvisninger til noget af det, så skriv det i kommentarerne, så skal jeg grave det frem igen.&lt;/p&gt;
+
+&lt;h2 id=&quot;sandheden-om-kolesterol&quot;&gt;Sandheden om kolesterol&lt;/h2&gt;
+
+&lt;p&gt;Mit kolesterol er forhøjet, det er formentlig arveligt betinget, og jeg var begyndt, 3 månder før blodproppen, at spise kolesterolsænkende medicin dagligt. Men efter mange times læsning af alt lige fra blogposts, til forskningsrapporter, tegner der sig et noget andet billede en den klassiske pixi-bog fortælling om “Det gode og det onde kolesterol”.&lt;/p&gt;
+
+&lt;p&gt;Det som vi kalder blodpropper er reelt, præcis det: Korguleret blod som danner en prop. Det opstår fordi der på indersiden af årerne dannes plak, en ophobning af koleterol og kalk, som har lettere kår for at dannes ved forhøjet blodtryk, men som desuden har en inflamatorisk tilstand. Denne plak kan til en vis grad have harakter af et sår, som blodet krogulerer omkring. Det er altså ikke &lt;em&gt;bare&lt;/em&gt; tilstedeværelsen af kolesterol der er skurken, der finds en katalysator som er en slags betændelsestilstand, som kommer fra… Hvad?&lt;/p&gt;
+
+&lt;p&gt;…Jah, det er uvist! Der findes mange bud: Stress, betændelse andre steder i kroppern, f.eks. en tandbyld og tonsvis af andre gæt. Men ikke nogen &lt;em&gt;smoking gun&lt;/em&gt;, ikke noget det peger entydigt i én retning. Hvorfor der opstår inflamatoriske tilstande, som starter det hele forbliver en relativ ubekendt.&lt;/p&gt;
+
+&lt;p&gt;Den behandling man tilbyder er at rette op på de akutte skader, det vil sige at sætte stents eller foretage bypass operationer, og så fjerne så mange af de indvirkenende faktorer som muligt: Sænk kolesterolniveauet, regulér blodtrykket, fjern/fortynd blodets evne til at korgulere.&lt;/p&gt;
+
+&lt;h2 id=&quot;mættet-fedt---selve-ondets-rod-eller&quot;&gt;Mættet fedt - selve ondets rod! …eller?&lt;/h2&gt;
+
+&lt;p&gt;Da folk i det 20. århundrede begyndte at få hjertelidelser af nærmest epidemiske proportioner fik man hurtigt skabt korrelation at hjertelidelser var relateret til højt kolesterol i blodet. Og at mættet fedt forhøjer kolesterolet i blodet.&lt;/p&gt;
+
+&lt;p&gt;Derfor kom man op med den konklusion at:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“Hvis mættet fedt forhøjer kolesterolet (A er årsag til B) og kolesterol giver hjertelidelser (B er årsag til C) så må det betyde, at mættet fedt giver hjertelidelser (A er årsag til C)”&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Teorien går under betegnelsen &lt;em&gt;diet-heart hypothesis&lt;/em&gt; og var endnu fuldstændig ubekræftet da den i 1977 blev lagt til grund for (USA’s) sundhedspolitik på området. Andre nationer fulgte hurtigt efter og det blev national sundhedspolitik i mange lande verden over. Stadig fuldstændig ubekræftet. I dag har vi meget mere viden, som viser at denne teori er delvis forkert, men vi anbefaler stadig at undgå mættet fedt.&lt;/p&gt;
+
+&lt;p&gt;Mere om det, men først en omvej tilbage til kolesterolet.&lt;/p&gt;
+
+&lt;p&gt;Vi kender kolesterol som HDL og LDL og har lært at hende forskel på &lt;code class=&quot;highlighter-rouge&quot;&gt;H&lt;/code&gt; og &lt;code class=&quot;highlighter-rouge&quot;&gt;L&lt;/code&gt; med assosiaionerne H=Herlige og L=Lede. så altså “Det herlige Kolesterol” og “Det lede Kolesterol”.&lt;/p&gt;
+
+&lt;p&gt;HDL og LDL er forkortelser for henholdsvis &lt;em&gt;High-density lipoprotein&lt;/em&gt; og &lt;em&gt;Low-density lipoprotein&lt;/em&gt;. Så langt altså endnu ikke et ord om kolesterol. Kolesterol er bare kolesterol, altså fedt som vores celler ikke kan leve uden. Lipoproteiner binder kolesterolet og bærer kolesterol rundt i kroppen via blodbanerne. Det er smart, nu kan fedtmolekyler transporteres i blodet, som jo er en vandopløselig vædske. De kæder ef kolesterol som lipoproteinerne bærer kan have en høj eller lav tæthed, altså et mål for hvor hårdt molekylerne binder til hinanden.&lt;/p&gt;
+
+&lt;p&gt;Til at begynde med, for år tilbage, målte man bare på mængden af kolesterol, og først senere lærte man, at LDL medfører forhøjet risiko og HDL eliminerer risiko. At måle på kolesterol generelt er altså totalt misvisende fordi den største mængde kolesterol er bundet i HDL - som er meget tættere og som reelt er “det gode”.&lt;/p&gt;
+
+&lt;p&gt;Mættet fedt blev afskrevet som gift, på basis af &lt;em&gt;diet-heart&lt;/em&gt; hypotesen. Fordi det beviseligt forhøjer LDL, men det forhøjer &lt;em&gt;også&lt;/em&gt; HDL - og bør derfor ikke sådan uden videre afskrives. I hvert tilfælde ikke på baggrund af ammestuehistorier og antagelser.&lt;/p&gt;
+
+&lt;p&gt;Hvad der er mere interessant er, at LDL også optræder i to forskellige former&lt;sup id=&quot;fnref:low-density-ldl&quot;&gt;&lt;a href=&quot;#fn:low-density-ldl&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Small dense LDL&lt;/strong&gt;: Små lipoproteiner som er tætte og kan penetrere blodårerne, de fører til hjertelidelser.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Large fluffy LDL&lt;/strong&gt;: Store lipoproteiner, som er bløde og oppustede og derfor ikke kan penetrere årerne, der har ingen indflydelse på risiko for hjertelidelser.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Small dense vs Large fluffy&lt;/em&gt; kan sammenlignes med et majskorn, som kan &lt;em&gt;poppes&lt;/em&gt; til et popcorn.&lt;/p&gt;
+
+&lt;p&gt;De små tætte LDL’er har iøvrigt også meget nemmere ved at oxidere, som er en vigtig medvirkende årsag til hjertelidelser. Alt i alt har folk med små tætte LDL’er har tre gange højere risiko for hjertelidelse end folk med store LDL’er.&lt;/p&gt;
+
+&lt;p&gt;Det er altså en undergruppe af LDL, som er farlig. Men det viser sig, at ved at indtage føde med mættet fedt ændres de små tætte LDL’er til store oppustede LDL’er. Så selvom mættet fedt nok forøger LDL’et i blodet, så medvirker det også til at ændre den farlige LDL til den harmløse poppede type.&lt;/p&gt;
+
+&lt;p&gt;Det er en myte at mættet fedt er entydigt usundt&lt;sup id=&quot;fnref:saturated-fat&quot;&gt;&lt;a href=&quot;#fn:saturated-fat&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;!&lt;/p&gt;
+
+&lt;h2 id=&quot;væk-med-fedtet-på-maven---det-er-sukkeret-der-er-banditten&quot;&gt;Væk med fedtet på maven - Det er sukkeret der er banditten!&lt;/h2&gt;
+
+&lt;p&gt;De sidste 10 år har mit BMI ligget &lt;em&gt;lige over&lt;/em&gt; det accetable for min højde - teknisk set var jeg overvægtig. &lt;em&gt;“Det skal fan’me være løgn”&lt;/em&gt; tænkte jeg. &lt;em&gt;“jeg har ikke lyst til at dø”&lt;/em&gt;. Jeg begyndte at læse om ernæring og kost - utallige blogposts og forskningsrapporter.&lt;/p&gt;
+
+&lt;p&gt;Det fedt vi har omkring maven er det farligste på kroppen, men det er svært at komme af med, det kan ikke trænes væk gennem styrketræning af mavemusklerne, det skal brændes af.&lt;/p&gt;
+
+&lt;p&gt;Jeg fandt en inspirerende artikel&lt;sup id=&quot;fnref:loose-belly-fat&quot;&gt;&lt;a href=&quot;#fn:loose-belly-fat&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; på &lt;a href=&quot;http://www.healthline.com&quot; target=&quot;_blank&quot;&gt;Healthline&lt;/a&gt;, som samler en række dokumenterede undersøgelser og anerkendt viden på området.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spis masser af opløselige fibre&lt;/li&gt;
+  &lt;li&gt;Undgå transfedtsyrer&lt;/li&gt;
+  &lt;li&gt;Drik ikke for meget alkolhol&lt;/li&gt;
+  &lt;li&gt;Spis masser af protein&lt;/li&gt;
+  &lt;li&gt;Undgå stress&lt;/li&gt;
+  &lt;li&gt;Undgå sukker&lt;/li&gt;
+  &lt;li&gt;Lav Aerobic (Cardio) træning&lt;/li&gt;
+  &lt;li&gt;Begræns kulhydrater, specielt de raffinerede&lt;/li&gt;
+  &lt;li&gt;Erstat noget af stegeolien med kokosolie&lt;/li&gt;
+  &lt;li&gt;Lav styrketræning&lt;/li&gt;
+  &lt;li&gt;Undgå sukkerdrikke&lt;/li&gt;
+  &lt;li&gt;Få masser af søvn&lt;/li&gt;
+  &lt;li&gt;Før journal over det du spiser og træner&lt;/li&gt;
+  &lt;li&gt;Spis fed fisk hver uge&lt;/li&gt;
+  &lt;li&gt;Undgå at drikke frugtjuice&lt;/li&gt;
+  &lt;li&gt;Tilføj Æbleeddike til dit daglige kosttilskud&lt;/li&gt;
+  &lt;li&gt;Spis mad med mælkesyre bakterier, eller tag det som kosttilskud&lt;/li&gt;
+  &lt;li&gt;Sporadisk faste&lt;/li&gt;
+  &lt;li&gt;Drik grøn the&lt;/li&gt;
+  &lt;li&gt;Kombiér alle tingen på listen, lev varieret&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Yep! Alkohol er sundt i små mængder dagligt, sundere end at drikke den samme mængde alkohol fordelt over færre dage med pauser imellem. Du skal altså drikke som en fransk bjergbonde, ét glas om dagen i forbindelse med din mad, og ikke som en partyabe.&lt;/p&gt;
+
+&lt;p&gt;Aerobic træning er at gå, løbe, cykle og svømme, det brænder der kalorier af og træner hjertet, men opbygger ikke vores muskler.&lt;/p&gt;
+
+&lt;p&gt;Hele diskussionen og mættede vs umættede fedtstoffer har fået et nyt perspektiv med moderne forskning. Kokosolie er sundt!&lt;/p&gt;
+
+&lt;p&gt;Styrketræning øger muskelmassen. Når man taber sig på aerobic træning vil ca en fjerdedel være muskelmasse, den skal genopbygges. En forøget muskelmasse forhøjer forbrændingen.&lt;/p&gt;
+
+&lt;p&gt;Masser af søvn vil sige mindst 7 timer god søvn, hvert døgn.&lt;/p&gt;
+
+&lt;p&gt;Frugtjuice er nok sundt på vitaminer men det indeholder alt for meget sukker, lige så meget som almindelig sodavand.&lt;/p&gt;
+
+&lt;p&gt;1-2 spiseskefulde æbleeddike hver dag er sundt - eddikesyre forbrænder fedt.&lt;/p&gt;
+
+&lt;p&gt;Enten én dags faste hver eller hver anden uge, eller faste hver dag, det vil sige at al daglig føde indtages i et vindue på 8 timer, og altså 16 timers daglig faste. F.eks spis ikke efter 19:00 og spis så første igen kl 11:00 den efterfølgende dag.&lt;/p&gt;
+
+&lt;p&gt;Hmmm. Måske havde jeg hørt meget af det her før, men måske ikke reelt &lt;em&gt;hørt&lt;/em&gt; det. I hverttilfælde ikke efterlevet det.&lt;/p&gt;
+
+&lt;h2 id=&quot;low-carb-bølgen&quot;&gt;Low-carb bølgen&lt;/h2&gt;
+
+&lt;p&gt;I min søgen på internettet hvor jeg hopper fra den ene blog til den anden, med sporadiske besøg til de forskningsrapporter de bygger på bliver det tydligt, at der tegner sig et mønster, at det er sukker, faktisk kulhydrat over en bred kam, der er problemet.&lt;/p&gt;
+
+&lt;p&gt;Når vi spiser sukker og stivelse stiger blodsukkeret, helt uden at vores stofskifte skal foretage sig noget som helst. Sukkeret går direkte i blodet. Så dannes der insulin som kan nedbryde det, men insulin er samtidig et signalstof, som fortæller vores fedtdepoter, at vi har al for meget energi i kroppen og det er bare med at komme igang med at lagre den.&lt;/p&gt;
+
+&lt;p&gt;Når man ikke spiser sukker eller kulhydrat vil vores stoffskifte selv regulere vores blodsukker, ved at bruge den energi som er tilgængelig enten via vores føde eller vores fedtdepoter. Der dannes stort set ikke noget insulin i den process.&lt;/p&gt;
+
+&lt;p&gt;Man bliver ikke fed af at spise fedt, men bliver fed at at spise sukker og kulhydrater.&lt;/p&gt;
+
+&lt;p&gt;Det viser sig at sult er en følelse som opstår når vores blodsukker falder, uanset hvor højt det er. Det vil sige, at hvis man bæller en sodavand, så går blodsukkeret amok, men snart er der dannet insulin og kort tid efter falder blodsukkeret igen. Fra et ekstremt højt niveau til et relative højt - men trods alt lavere - niveau. Men dét at det falder gør, at man vil føle sult.&lt;/p&gt;
+
+&lt;p&gt;Man bliver sulten af at spise sukker!&lt;/p&gt;
+
+&lt;h2 id=&quot;ketose&quot;&gt;Ketose&lt;/h2&gt;
+&lt;p&gt;Det viser sig endda at historien om at vores celler kun kan få energi fra glyckoler ikke er sand. Når vores stofskifte kommer op på de høje nagler med at omdanne vores fedt, så dannes der ketoner i leveren.&lt;/p&gt;
+
+&lt;p&gt;Ketoner er en ligeså anvendelig energikilde til vores celler som glykose.&lt;/p&gt;
+
+&lt;p&gt;Når vi faster, uanset om det er en dag om ugen, eller 16 timer om dagen, og iøvrigt ikke indtager mere end ca 20g kulhydrat om dagen. Så vil kroppens forbrænding gå i ketose. En tilstand som er forbundet med en følelse af et enormt energi overskud og stort set ingen sultfølelse.&lt;/p&gt;
+
+&lt;p&gt;Ketoner er reelt affaldsstoffer, et restprodukt der produceres i leveren ved fedtforbrænding. Det er ikke anbefalet at man lever konstant i ketose, men det er beviseligt sundt at være det en gang imellem.&lt;/p&gt;
+
+&lt;h2 id=&quot;ny-kostplan&quot;&gt;Ny kostplan&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;“What the F*@&amp;amp;!”&lt;/em&gt; - Hvorfor vidste jeg ikke det her? Hvorfor lærer vi ikke det i skolen, hvorfor er alle &lt;em&gt;light&lt;/em&gt; produkterne i supermarkedet, som nok er fedtfattige men til gengæld proppet med sukker, ikke blevet forbudt for længe siden?&lt;/p&gt;
+
+&lt;p&gt;25% af alle danskere skal ende med at dø af hjertekarsygdomme. Og det er sukkeret der er banditten!&lt;/p&gt;
+
+&lt;p&gt;De sidste 8 uger har jeg levet at en low-carb kost; æg, fisk, kød, grøntsager - men kun dem der vokser &lt;em&gt;over&lt;/em&gt; jorden, nødder, frø, ost, smør, olier, mayonnaise, stenalderbrød, vin…&lt;/p&gt;
+
+&lt;p&gt;I realiteten spiser jeg &lt;em&gt;alt&lt;/em&gt; blot ikke sukker og stivelse. Det vil sige stort set ikke nogen kornprodukter, det betyder også ris, brød, øl og heller ikke noget pasta, ikke nogen grøntsager, der vokser &lt;em&gt;under&lt;/em&gt; jorden, f.eks. kartofler, gulerødder, rødbeder, jordskogger, selleri. De indeholder alt for meget stivelse.&lt;/p&gt;
+
+&lt;p&gt;I mit tilfælde havde jeg også brug for at tabe mig, så jeg købte mig et aktivitets/puls ur og indstallede en &lt;em&gt;health app&lt;/em&gt; på min smartphone. Nu gik jeg i gang med a knaste alt jeg spiste ind i app’en, så jeg kunne se hvor mange kalorier jeg indtager og hvor mange jeg forbrænder. Min &lt;em&gt;health app&lt;/em&gt; hjælper mig også med at holde styr på at energikilden primært er fedt, sekundært proteiner og kulhydrat kun 10-20% af min energikilde.&lt;/p&gt;
+
+&lt;p&gt;Et kilo fedtvæv i menneskekroppen indeholder ca 7500 kcal, Jeg fortalte min &lt;em&gt;health app&lt;/em&gt; at jeg gerne ville tabe mig 8 kilo på 10 uger, jeg skulle altså planlægge et energiunderskud på ca 860 kcal om dagen. For ikke at man skal ændre alt for meget på sine kostvaner, skal differencen mellem indtaget og forbrugt energi primært opnås ved øget aktivitetsniveau, ikke ved at sulte sig selv.&lt;/p&gt;
+
+&lt;p&gt;Jeg begyndte at tælle kalorier - og dyrke motion &lt;em&gt;hver dag&lt;/em&gt;: Kondicykel, mountainbike, HIIT træning hjemme på stuegulvet, løbeture. Jeg begyndte at springe morgenmaden over. Dagens første måltid spiser jeg omkring frokost, det giver de fleste dage, en daglig fasteperiode på ca 14-18 timer. Jeg går i seng mindst en time tidligere end jeg har haft for vane. Jeg drikker stadig masser af kaffe, men tidligere ku’ jeg godt drikke kaffe om aftenen, det gør jeg ikke mere.&lt;/p&gt;
+
+&lt;p&gt;Iøvrigt er jeg ikke fanatisk med noget af det, i den mellemliggende periode har jeg både spist is, crossainter, Sushi (ris), drukket øl. Men det er ikke noget jeg gør dagligt. Jeg spiser også en lille smule brød, men stortset kun fuldkornsbrød med et fiberindhold på 10% eller mere. Frugt indeholder en masse sukker, men det spiser jeg også en smule af, for det indeholder også en masse fibre - og det skal der til.&lt;/p&gt;
+
+&lt;p&gt;Den morgen jeg fik min første blodprop stod jeg op på vægten, den stod på 87,1 kg. Her til morgen præcis 8 uger senere siger den 78,3 kg. Det er en lille smule mere end et kilo om ugen.&lt;/p&gt;
+
+&lt;p&gt;Jeg husker for 25 år siden, da jeg stoppede med at ryge, at jeg forestillede mig det vill være et fattigt liv uden cigaretter. Jeg havde røget i 10 år på det tidspunkt. Jeg elskede at ryge, men indså at det ikke kunne fortsætte. Det viste sig at jeg bare følte et kæmpe energioverskud, som så rigeligt kunne opveje det afsagn jeg havde frygtet.&lt;/p&gt;
+
+&lt;p&gt;Jeg har det meget på samme måde med mine nye kostvaner og levevis. Den fede mad give en helt anden mæthedsfølelse. Jeg har stort set ikke følt sult i de seneste 8 uger. Jeg har masser af energi. Motionen betyder endofiner - næsten hver dag. Man bliver glad i låget af det.&lt;/p&gt;
+
+&lt;h2 id=&quot;igennem---og-ændret-for-altid&quot;&gt;Igennem - og ændret for altid&lt;/h2&gt;
+
+&lt;p&gt;Det var for tidligt for mig at dø, jeg har ændret en hel del ydre omstændighedr omkring mit liv på de her otte uger, hvor jeg har gået og ventet på udfaldet og omfanget af min anden operation. Jeg føler mig meget taknemmelig over at det trods alt er endt som som det er. Rent fysiskt har jeg det bedre end jeg har haft det i over 25 år. Jeg har ingen mén eller symptomer overhovedet. I min gamle livrem bruger jeg nu samme hul, som dengang jeg blev gift og jeg har masser af god energi både fra den kost jeg spiser og den motion jeg dyrker stort set dagligt.&lt;/p&gt;
+
+&lt;p&gt;Men der er noget andet ved det at have været så tæt på at skulle herfra, som ikke er slut efter otte uger og 2 operationer. Det har ramt mig med en eftertænksomhed og en en tilstand af refleksion, som gør at jeg tænker mere end nogensinde hvad jeg vil med resten af mit liv. Jeg går efter at det skal vare 30-40 år endnu. Jeg skal ha’ sat mig godt tilrette i førersædet - fokus på det der giver mening, det der gør en forskel.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Det er li’som et nyt liv der starter, jeg går og fordøjer det, der er mange (MANGE) ting der skal være anderledes i fremtiden.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Det føles godt at være her nu, jeg glæder mig.&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;De Eneste To (Kvam+Sommer), 2010, “Jeg har ikke lyst til at dø”. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:maskinerne-i-haven&quot;&gt;
+      &lt;p&gt;Foto fra 1960. Steno Instituttets Billedsamling. Billedteksten er fra udgivelsen &lt;a href=&quot;/images/blog/ikke-lyst-til-at-do/Maskinerne-i-haven.pdf&quot; target=&quot;_blank&quot;&gt;&lt;em&gt;Makinerne i haven&lt;/em&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:maskinerne-i-haven&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:low-density-ldl&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://jamanetwork.com/journals/jama/article-abstract/374290&quot; target=&quot;_blank&quot;&gt;Low-Density Lipoprotein Subclass Patterns and Risk of Myocardial Infarction&lt;/a&gt; &lt;a href=&quot;#fnref:low-density-ldl&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:saturated-fat&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.healthline.com/nutrition/5-studies-on-saturated-fat&quot; target=&quot;_blank&quot;&gt;5 Studies on Saturated Fat — Time to Retire the Myth?&lt;/a&gt; &lt;a href=&quot;#fnref:saturated-fat&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:loose-belly-fat&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.healthline.com/nutrition/20-tips-to-lose-belly-fat&quot; target=&quot;_blank&quot;&gt;20 Effective Tips to Lose Belly Fat (Backed by Science)&lt;/a&gt; &lt;a href=&quot;#fnref:loose-belly-fat&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>{&quot;picture&quot;=&gt;&quot;/images/authors/lakruzz.png&quot;, &quot;twitter&quot;=&gt;&quot;lakruzz&quot;}</name></author><category term="Low-carb diæt" /><category term="Motion" /><category term="Blodprop" /><summary type="html">Jeg har lyst til det hele i dag. Jeg har lyst til at ta’ en bid af alting. Og æde det hele fucking rub og stub. Jeg har ikke lyst til at dø1. De Eneste To (Kvam+Sommer), 2010, “Jeg har ikke lyst til at dø”. &amp;#8617;</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/blog/ikke-lyst-til-at-do/lakruzz-heart-before-after.png" /></entry><entry><title type="html">Jeg er her endnu</title><link href="https://www.lakruzz.com/da/jeg-er-her-endnu/" rel="alternate" type="text/html" title="Jeg er her endnu" /><published>2018-07-01T00:00:00+02:00</published><updated>2018-07-01T00:00:00+02:00</updated><id>https://www.lakruzz.com/da/jeg-er-her-endnu</id><content type="html" xml:base="https://www.lakruzz.com/da/jeg-er-her-endnu/">&lt;p class=&quot;kicker&quot;&gt;I dag er det Søndag, 1. Juli 2018. Det er den første dag i resten af mit liv. I går, som altså var den sidste dag i mit hidtidige liv vågnede jeg klokken 5 om morgenen med en underlig trykken i halsen og den øverste del af brystet.&lt;/p&gt;
+
+&lt;p&gt;Det gjorde ikke ondt, snarere en ømhed eller et tryk. Jeg stod op, kunne ikke holde ud at ligge ned, stod i køkkenet i ca 20 minutter og drak et par glas vand og ventede på at det skulle gå væk. Jeg synes det lettede lidt, men så alligevel ikke helt.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Er det måske en allergisk reaktion?”&lt;/em&gt; Jeg tager en antihistamin.&lt;/p&gt;
+
+&lt;p&gt;Jeg var træt og prøvede at gå i seng igen, men lige da jeg lagde mig kunne jeg mærke, at det ville ikke fungere, så jeg tog min dyne med mig og gik ind på sofaen, så jeg måske kunne sidde lidt op og sove.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Er det muskelspændinger?”&lt;/em&gt; Jeg tager en Ipren.&lt;/p&gt;
+
+&lt;p&gt;Så begyndte trykket at lette sig, eller faktisk måske snarer at brede sig. Ud i kæben og tænderne i venstre side, og ud i armen i venstre side.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Venstre side - fuck!”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Google search:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Trykken for brystet&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“…hvis du har nogen af de her symptomer så er der ingen tid at spilde, ring efter en ambulance.”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Klokken er et par minutter i seks, jeg vækker Heidi: &lt;em&gt;“Jeg tror du bliver nødt til at køre mig på hospitalet.”&lt;/em&gt; Heidi er oppe og i tøjet, starter bilen får bakket den ud af indkørslen, før jeg selv er færdig med at tage tøj på og får pakket min taske, med PC, en bog, min pung. Jeg kan ikke finde min pung! Heidi kommer ind og henter mig: &lt;em&gt;“Vi finder den senere, lad os komme afsted.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Vi kører af Kongevejen ind, der er ikke et øje, Heidi kører stærk. &lt;em&gt;“Så hurtigt behøver det ikke at gå.”&lt;/em&gt; siger jeg, jeg er utilpas, men OK. Hverken svimmel eller usammenhængende blot den her trykken i halsen og brystet, som ikke rigtig letter. Heidi fortsætter ufortrødent i samme hæseblæsende fart.&lt;/p&gt;
+
+&lt;p&gt;Heidi kaster bilen ind på en parkeringsplads, hun holder oven på afmærkningen, jeg mumler noget med en bøde og om hun ikke lige skal rette op. &lt;em&gt;“Det må vente”&lt;/em&gt; svarer hun. Vi er på vej ind. I receptionen får jeg kun lige sagt mit CPR nummer og &lt;em&gt;“trykken for brystet.”&lt;/em&gt; Heidi byder ind med en kommentar; &lt;em&gt;“han er én af de der mænd, der aldrig går til lægen.”&lt;/em&gt; Jeg tvivler på at sygeplejesken overhoved når at notere mit CPR nummer, hun griber telefonen og tale med en kollega &lt;em&gt;“Jeg skal brug en ledig hjerteplads …OK.”&lt;/em&gt; Hun lægger røret på, rejser sig op, kommer ud på gangen til os og siger &lt;em&gt;“kom med mig.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Jeg får sat overvågning på mit hjerte, nogle elektroder der er forbundet til et apparat, som måler min puls og sender det til skærmen over min seng. Jeg får taget EKG diagram og blodprøver. Det føles næsten som om det hele foregår på én gang, der er tre sygeplejersker i gang.&lt;/p&gt;
+
+&lt;p&gt;Lægen kommer og stiller en masse spørgsmål til mine symptomer, mit forhøjede kolesterol som jeg har været i behandling for i 3 måneder nu. &lt;em&gt;“På en skala fra 0-10 hvor ondt gjorde det i morges da du vågnede? hvor ondt gør det nu?”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Den ene af sygeplejerskene kommer og sætter sig på sengekanten, hun forklarer at de på blodprøverne kan se, at jeg har et enzym i blodet, som udskilles af hjertet når det mangler ilt. Deres vurdering er, at jeg har haft en blodprop i hjertet da jeg vågnede, måske er den der stadig, under alle omstændigheder skal jeg på Rigshospitalet og undersøges. Jeg får sat to venflon drop i, et i hver arm. Det er standard når man skal køre ambulance at man har to, men mine årer vil bare ikke makke ret, efter to mislykkedes forsøg i hver albue ender jeg med at få ét på oversiden af højre hånd og ét på oversiden af venstre underarm.&lt;/p&gt;
+
+&lt;p&gt;Lægen kommer også og forklarer at hun har bestilt en kørsel til mig, ind til Rigshospitalet. Derinde på akut hjerteafdelingen, vil de gå ind via min hovedpulsåre, enten i håndleddet eller lysken og føre en wire op gennem pulsåren til hjertet. Jeg vil få indsprøjtet noget kontrastvæske, så de kan se mit hjerte på røntgen og så afgøre hvad der skal ske.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Nåh, der er de.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Ambulancefolkene er på plads og skal have mig over på deres båre, de sætter også overvågning på mig. To paramedicinere er også dukket op, det er to læger, der kører lige efter os i deres egen bil. Turen fra Hillerød hospital til modtagelsen på Rigshospitalet er 37 km, det tager 13 minutter. Heidi sidder med hos ambulanceføreren. De kører med fuld udrykning og det ekstra hidsige horn oveni når trafikken ikke skiller sig hurtigt nok. Heidi fortalte at de kørte 160km/t det meste af tiden på motorvejen.&lt;/p&gt;
+
+&lt;p&gt;De to paramedicinere følger med op hele vejen helt op til operationsstuen, hvor rigshospitalets læger tager over.&lt;/p&gt;
+
+&lt;p&gt;På det her tidspunkt er jeg på 0 på smerteskalaen, min trykken for brystet er væk igen, måske er der stadig et snert af et ubehag, men jeg føler mig bestemt ikke decideret dårlig. Jeg går selv fra ambulancefolkenes båre og over på operatingsbordet.&lt;/p&gt;
+
+&lt;p&gt;Allerede inden jeg ligger ordentligt til rette er en sygeplejerske i gang med at forklare mig hvad der skal ske, mens en anden er i gang med at desinficeret mit håndled, og en tredie er ved at fjerne min bukser.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Vi går ind via håndleddet, du bliver ikke bedøvet udover en lokalbedøvelse der hvor vi skal ind. Og så får du en lille smule beroligende. Der kommer et lille prik nu.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Kirurgen hilser på mig. Fortæller at hun er klar til at gå i gang.&lt;/p&gt;
+
+&lt;p&gt;Jeg kan mærke wiren som den passerer albuen og skulderen. Det rumstere, det er ubehageligt, men det gør ikke ondt. Der går noget tid, jeg mærker stadig kun wireren og albuen og skulderen. &lt;em&gt;“Er I forbi skulderen?”&lt;/em&gt;  spørger jeg.&lt;/p&gt;
+
+&lt;p&gt;Kirugen svarer &lt;em&gt;“Ja vi har allerede været oppe i hjertet nogle gange. Du har en blodprop i hjertet som vi sætter en stent i, og så har du endnu en forsnævring, som vi også sætter stents i nu vi er her”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;pic caption center medium&quot;&gt;
+
+
+&lt;img src=&quot;/assets/responsive/1020/stent.jpg&quot; srcset=&quot;            /assets/responsive/255/stent.jpg 255w,            /assets/responsive/510/stent.jpg 510w,            /assets/responsive/1020/stent.jpg 1020w,    &quot; alt=&quot;Stent explained&quot; class=&quot;pic center medium&quot; /&gt;En stent er et lille metalgitter som ligger uden om ballonudvidelsen, så når ballonen trækkes ud, bliver gitteret tilbage og holder udvidelsen på plads.&lt;/div&gt;
+
+&lt;p&gt;Pludselig, som jeg ligger der, kan jeg mærke den sammen trykken for brystet igen, koldsveden pibler frem. &lt;em&gt;“Nu får jeg det dårligt igen”&lt;/em&gt; siger jeg. Den ene af sygeplejerskerne forklarer mig, at der under selve udvidelsen af ballonen bliver der lavet en prop, som hjertet reagerer på, men det er kun kortvarigt indtil de trækker den ud igen.&lt;/p&gt;
+
+&lt;p&gt;Efter operationen fik jeg de her to røntgenbilleder af sygeplejersken.&lt;/p&gt;
+
+&lt;div class=&quot;pic caption center medium&quot;&gt;
+
+
+&lt;img src=&quot;/assets/responsive/1020/heart-before-and-after.jpg&quot; srcset=&quot;            /assets/responsive/255/heart-before-and-after.jpg 255w,            /assets/responsive/510/heart-before-and-after.jpg 510w,            /assets/responsive/1020/heart-before-and-after.jpg 1020w,    &quot; alt=&quot;My heart - before the stent&quot; class=&quot;pic center medium&quot; /&gt;På billedet til venstre, i området market med rødt, er den ene af de tre store kanspulsårer blodårer der forsyner hjertet med ilt lukket til af en blodprop. På billedet til højre ses det samme område få minutter senere, hvor blodproppen er fjernet og det indsnævrede område udvidet med ballon og sikret med stent.&lt;/div&gt;
+
+&lt;p&gt;I dag, den første i mit nye liv, er jeg bare blevet overvåget, jeg får taget blodprøver, EKG og målt blodtryk.&lt;/p&gt;
+
+&lt;p&gt;De fortæller mig at den ene af mine kranspulsårer stadig er helt lukket til. Det er ikke en blodprop, men en indsnævring, som er sket over længere tid. Hjertet har selv dannet en net af alternative forsyningsåre til denne gren af mit hjert fra den højre side - hjertet har lavet sin egen bypass.&lt;/p&gt;
+
+&lt;p&gt;Men det skal også fixes, så enten skal der en stent mere i dér også, eller også skal jeg have en bypass operation. Det kommer til at gå nogle måender før de vil foretage den operation.&lt;/p&gt;
+
+&lt;p&gt;Resten af livet kommer til at stå på blodfortyndende og kolesterolsænkende medicin hver dag. Og motion og sund kost - hver dag.&lt;/p&gt;
+
+&lt;p&gt;Det er er brat opvågnen, til et nyt liv.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Læs også min blog om den videre færd, og de otte mellemliggende uger der gik, indtil jeg fik min anden hjerteoperation: &lt;a href=&quot;../ikke-lyst-til-at-do&quot;&gt;“Jeg har ikke lyst til at dø”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content><author><name>{&quot;picture&quot;=&gt;&quot;/images/authors/lakruzz.png&quot;, &quot;twitter&quot;=&gt;&quot;lakruzz&quot;}</name></author><category term="Blodprop" /><summary type="html">I dag er det Søndag, 1. Juli 2018. Det er den første dag i resten af mit liv. I går, som altså var den sidste dag i mit hidtidige liv vågnede jeg klokken 5 om morgenen med en underlig trykken i halsen og den øverste del af brystet.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/blog/jeg-er-her-endnu/heart-before-and-after.jpg" /></entry><entry><title type="html">Docker Jekyll - 5 easy steps</title><link href="https://www.lakruzz.com/en/docker-jekyll/" rel="alternate" type="text/html" title="Docker Jekyll - 5 easy steps" /><published>2018-03-03T00:00:00+01:00</published><updated>2018-03-03T00:00:00+01:00</updated><id>https://www.lakruzz.com/en/docker-jekyll</id><content type="html" xml:base="https://www.lakruzz.com/en/docker-jekyll/">&lt;p class=&quot;kicker&quot;&gt;Jekyll is a static web page generator made in Ruby. It’s the engine that runs GitHub Pages. In the following you will get five easy steps to run jekyll locally, without even installing it, but simply through running a docker image.&lt;/p&gt;
+
+&lt;p&gt;The following instructions assumes that you are on a Mac, but it’s even easier if you are on Linux. On linux you can simply skip steps 2+3, since you don’t need a virtual host machine for your Docker.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/docker-jekyll.png&quot; alt=&quot;Docker Jekyll&quot; class=&quot;pic right small&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-get-docker-on-your-machine&quot;&gt;1. Get Docker on your machine&lt;/h2&gt;
+&lt;p&gt;If you already have Docker installed and knows that it’s working for you - you are already onto the next step.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to install Docker on Mac is to use the &lt;a href=&quot;https://docs.brew.sh/&quot; target=&quot;_blank&quot;&gt;Homebrew package manager&lt;/a&gt;. If you don’t have it setup already you must do it straight away, it’s an absolute must.&lt;/p&gt;
+
+&lt;p&gt;Run this:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once Homebrew is installed on your Mac, Docker installation is as easy as:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;virtualbox
+brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;docker
+brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;docker-machine
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;2-create-a-default-docker-machine&quot;&gt;2. Create a “default” Docker Machine&lt;/h2&gt;
+
+&lt;p&gt;Since your Mac isn’t running Linux natively and your Docker container depends on it, you must have a &lt;em&gt;docker-machine&lt;/em&gt; available. This is simply how Docker works on non-linux OS, including MacOS and Windows. I’ll use the name “default” in my example, but if you want to call it something else, go ahead, just replace my instances of “default” with you own name in the following instructions.&lt;/p&gt;
+
+&lt;p&gt;I you already have a “default” docker machine running then you can move directly onto the next step. If not this is what you need to do:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-machine create &lt;span class=&quot;nt&quot;&gt;--driver&lt;/span&gt; virtualbox default
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;OK that was easy - “default” docker-machine created! Now you need to start it.&lt;/p&gt;
+
+&lt;p&gt;If you just created it, then it will be running. To be sure you can run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ls&lt;/code&gt;. If your “default” machine isn’t running, you need to start it again.&lt;/p&gt;
+
+&lt;p&gt;Like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-machine start default
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;But it’s even more convenient to configure your Mac to start it up automatically at each reboot.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/machine/get-started/#start-local-machines-on-startup&quot;&gt;The way to do that&lt;/a&gt; is to configure a launcher. Create a file called &lt;code class=&quot;highlighter-rouge&quot;&gt;com.docker.machine.default.plist&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Library/LaunchAgents/&lt;/code&gt; directory, with the following content:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot;
+  &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;plist&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;EnvironmentVariables&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;PATH&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;Label&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;com.docker.machine.default&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;ProgramArguments&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;array&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;/usr/local/bin/docker-machine&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;start&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;default&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/array&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;RunAtLoad&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;true/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/plist&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next time you reboot your Mac, the Docker-machine will start automatically.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-prepare-your-shell-to-use-the-default-docker-machine&quot;&gt;3. Prepare your shell to use the “default” docker-machine&lt;/h2&gt;
+
+&lt;p&gt;Before you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt; command you will need to configure your environment. You just simply have to run:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;docker-machine &lt;span class=&quot;nb&quot;&gt;env &lt;/span&gt;default&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Unfortunately you need to do this every time you open a new terminal. If you find that slightly annoying, then it’s highly recommended that you just add the command to your environment file (&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt; or what ever you are using.)&lt;/p&gt;
+
+&lt;h2 id=&quot;4-define-a-jekyll-alias&quot;&gt;4. Define a “jekyll” alias&lt;/h2&gt;
+
+&lt;p&gt;We want jekyll to be available as a native command, without actually installing it, so now when I have Docker working for me, I can use a docker container (&lt;strong&gt;lakruzz/jekyll-plus&lt;/strong&gt;&lt;sup id=&quot;fnref:jekyll-plus&quot;&gt;&lt;a href=&quot;#fn:jekyll-plus&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;) that I’ve made available from the public Docker registry. So all we need is an alias, it looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'docker run -i -t --rm \
+  -v $(pwd):/app:rw --workdir /app --publish 80:4000 \
+  --entrypoint jekyll lakruzz/jekyll-plus'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Like in the previous step, this alias is not one you want to define every time you open a new terminal, so to make the alias permanent, simply open your environment resource file (&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt; …) again and add it there.&lt;/p&gt;
+
+&lt;p&gt;And while you have your resource file open I have another useful alias that I use frequently:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'open http://`docker-machine ip default`'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It defines an alias &lt;code class=&quot;highlighter-rouge&quot;&gt;stage&lt;/code&gt;. When you run it, it will open a web browser, pointing to the jekyll site hosted from your “default” Docker machine.&lt;/p&gt;
+
+&lt;h2 id=&quot;5-create-a-local-config-file-in-you-jekyll-website&quot;&gt;5. Create a local config file in you jekyll website&lt;/h2&gt;
+
+&lt;p&gt;To serve a Jekyll site you could simply run:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;However, when you run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; from a docker container, there are a few additional settings that needs to be applied as switches. Typically you would need to define &lt;code class=&quot;highlighter-rouge&quot;&gt;--host 0.0.0.0&lt;/code&gt; and since you are mounting the local disk into the docker container, you will typically also have to force the watch to poll with &lt;code class=&quot;highlighter-rouge&quot;&gt;--force_polling&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But there is more: Often when I run Jekyll in development mode I also want to build all unpublished pages, build incremental, run in verbose mode etc.&lt;/p&gt;
+
+&lt;p&gt;So the command I should use look like this&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt; 0.0.0.0 &lt;span class=&quot;nt&quot;&gt;--force_polling&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;--incremental&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--drafts&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--future&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--unpublished&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--verbose&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;It starts to get kinda lengthy.&lt;/p&gt;
+
+&lt;p&gt;So instead of stacking all these switches on top of the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; command, I’ve created an extra jekyll configuration file, alongside the default &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;. I’ve called it &lt;code class=&quot;highlighter-rouge&quot;&gt;_dev_config.yml&lt;/code&gt; and it contains the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Required when running from a Docker container&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;0.0.0.0&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;force_polling&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Speed it up a bit&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;incremental&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# How much to render? These all default to false - But I want them all when I develop.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;show_drafts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;future&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;unpublished&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Make the machine talk to you&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, with everything set up, I can change directory into the folder that contains my jekyll site and build and serve is like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--config&lt;/span&gt; _config.yml,_dev_config.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I’ve even created an alias for that as well. The things I end up adding to my &lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt; (… or &lt;code class=&quot;highlighter-rouge&quot;&gt;.bashrc&lt;/code&gt;) file sums up to:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Docker-machine env setup&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;docker-machine &lt;span class=&quot;nb&quot;&gt;env &lt;/span&gt;default&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Docker Jekyll aliases&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'open http://`docker-machine ip default`'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;htmlproofer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'docker run -it --rm\
+  -v $(pwd):/site --workdir /site 18fgsa/html-proofer'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'docker run -i -t --rm \
+  -v $(pwd):/app:rw --workdir /app --publish 80:4000 \
+  --entrypoint jekyll lakruzz/jekyll-plus'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;dev-jekyll&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'docker run -i -t --rm \
+  -v $(pwd):/app:rw --workdir /app --publish 80:4000 \
+  --entrypoint jekyll lakruzz/jekyll-plus serve \
+  --config _config.yml,_dev_config.yml'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;docker-jekyll---anything-as-code&quot;&gt;Docker Jekyll - anything as code&lt;/h2&gt;
+
+&lt;p&gt;The approached described here, for running Jekyll locally, without actually installing it taps perfectly into the contemporary &lt;em&gt;anything as code&lt;/em&gt; buzz; If you build your web site for production using the same image as you use for development it’s game over for all the &lt;em&gt;snowflake&lt;/em&gt; servers - I’ll touch on this topic in a future blog.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:jekyll-plus&quot;&gt;
+      &lt;p&gt;The &lt;a href=&quot;https://hub.docker.com/r/lakruzz/jekyll-plus/&quot; target=&quot;_blank&quot;&gt;lakruzz/jekyll-plus&lt;/a&gt; Docker image is an image that installs the stack used for GitHub Pages, It relies on the Ruby gem that is maintained by GitHub. In addition I’ve added a few jekyll plugins that are really neat but unsupported by GitHub pages. Most prominent is the &lt;a href=&quot;https://github.com/wildlyinaccurate/jekyll-responsive-image&quot; target=&quot;_blank&quot;&gt;jekyll-responsive-image&lt;/a&gt; plugin, but if you use it, you will have to become self-hosted. I’ll get back to that in another blog later. &lt;a href=&quot;#fnref:jekyll-plus&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>{&quot;picture&quot;=&gt;&quot;/images/authors/lakruzz.png&quot;, &quot;twitter&quot;=&gt;&quot;lakruzz&quot;}</name></author><category term="Docker" /><category term="Docker machine" /><category term="Jekyll" /><category term="MacOS" /><summary type="html">Jekyll is a static web page generator made in Ruby. It’s the engine that runs GitHub Pages. In the following you will get five easy steps to run jekyll locally, without even installing it, but simply through running a docker image.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/blog/docker-jekyll.some.png" /></entry><entry><title type="html">The DORITH principle</title><link href="https://www.lakruzz.com/en/dorith/" rel="alternate" type="text/html" title="The DORITH principle" /><published>2018-02-03T00:00:00+01:00</published><updated>2018-02-03T00:00:00+01:00</updated><id>https://www.lakruzz.com/en/dorith</id><content type="html" xml:base="https://www.lakruzz.com/en/dorith/">&lt;p class=&quot;kicker&quot;&gt;DORITH is a contraction of sentence “DO the RIght THing”. It’s a principle that enables you to make decisions that will appear to be tactical and still allow you to learn as you go. Understand the in-situ challenge with  being tactical and start taking small steps in the right direction.&lt;/p&gt;
+
+&lt;h2 id=&quot;vision-strategy-and-tactics-yadda-yadda-yadda&quot;&gt;Vision, strategy and tactics …yadda, yadda, yadda&lt;/h2&gt;
+
+&lt;p&gt;It’s well know, that in management and leadership, the terms &lt;em&gt;vision&lt;/em&gt;, &lt;em&gt;strategy&lt;/em&gt; and &lt;em&gt;tactics&lt;/em&gt; are as old as Methuselah. And all though the correlation between the terms and the way they are used does make a lot of sense - in management. It’s also one of those doctrines, that kinda make us immune, isn’t it? When a manager says &lt;em&gt;“Vision, strategy and tactics”&lt;/em&gt; we tend to roll our eyes and think &lt;em&gt;“yadda yadda yadda - talk to the hand”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-in-situ-problem-with-being-tactical&quot;&gt;The in-situ problem with being tactical&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/dorith.jpg&quot; alt=&quot;DORITH&quot; class=&quot;pic left medium&quot; /&gt; I’ve been managing people, for ten years now, and from that point of view it really does seem to be important to ensure, that the everyday work is tactically founded in a strategy that leads to fulfillment of the vision. However, it only makes sense to &lt;em&gt;think&lt;/em&gt; like that, it doesn’t make much sense to &lt;em&gt;talk&lt;/em&gt; like that.&lt;/p&gt;
+
+&lt;p&gt;Here’s an example; When someone walks up to me and ask for advice or priority or mentoring in relation to something very specific that they are currently occupied with. Then it doesn’t make much sense to reply &lt;em&gt;“be tactical about it”&lt;/em&gt; although that is technically not a bad reply at all. In reality however, it’s very rare that it resonates with something concrete. It’s usually quite abstract what &lt;em&gt;tactical&lt;/em&gt; is in the given context.&lt;/p&gt;
+
+&lt;p&gt;Another problem with that technically correct, but in-situ fairly useless reply, is that it ties back to the strategy; Being tactical implies &lt;em&gt;“…according to the strategy”&lt;/em&gt; and even worse - being strategic likewise implies &lt;em&gt;“…according to the vision”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Damn - that means, that as a manager, I need to have a rock solid and well communicated &lt;em&gt;vision&lt;/em&gt;, that is manifested in an equally rock solid and well communicated &lt;em&gt;strategy&lt;/em&gt; - The truth is, that in &lt;a href=&quot;http://www.praqma.com&quot; target=&quot;_blank&quot;&gt;our company&lt;/a&gt;, these strategies are not manifested or rock solid, it’s more that we strive to build them into our corporate culture and that we’re allowing them to be somewhat in flux.&lt;/p&gt;
+
+&lt;p&gt;Without these strategies and employee handbooks, I can understand why the encouragement to be &lt;em&gt;tactical&lt;/em&gt; leads to the immediate &lt;em&gt;“yadda, yadda, yadda”&lt;/em&gt;  thought.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-agile-manifesto&quot;&gt;The Agile manifesto&lt;/h2&gt;
+
+&lt;p&gt;It may derive from an occupational hazard; We’re in the software development business and the &lt;a href=&quot;http://www.agilemanifesto.org&quot; target=&quot;_blank&quot;&gt;agile manifesto&lt;/a&gt; tends to be our credo. We honestly belive in motivated and self-organized teams, we belive in meritocracy and we acknowledge that requirements are constantly changing, we belive in technical excellence and in the focus that comes from minimizing work in progress - and we belive in retrospectives and continuous reflections as the primary input for continuous learning. We belive that creating value - such as working software - should be the primary measure of progress.&lt;/p&gt;
+
+&lt;p&gt;To me - as a manager who tends to recite from &lt;a href=&quot;http://agilemanifesto.org/principles.html&quot; target=&quot;_blank&quot;&gt;the twelve principles&lt;/a&gt; of the Agile Manifesto more frequently than most - the whole vision-strategy-tactics needs a different implementation than the traditional rock solid, well communicated approach.&lt;/p&gt;
+
+&lt;p&gt;I simply don’t belive in rock solid.&lt;/p&gt;
+
+&lt;h2 id=&quot;dorith&quot;&gt;DORITH&lt;/h2&gt;
+
+&lt;p&gt;The DORITH principle is a different approach. When someone walks up to me and asks for advice, priority or mentoring I tend to reply:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“Do the right thing!”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I feel obliged to not dictate the answer, but instead facilitate that we go and investigate; what is the right thing to do - in the context?&lt;/p&gt;
+
+&lt;p&gt;In any context, the right thing to do will obviously be relative to some kind of direction. An obviously good coaching question pops up:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“What are you hoping to achieve?”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Whatever the answer to the question is, it something worth dwelling with for a while, Is it the real thing? What is the rationale behind it? &lt;em&gt;Rationale&lt;/em&gt; - that word is one of my all time favorites. It’s definition is &lt;em&gt;“A set of reasons or a logical basis for a course of action or belief”&lt;/em&gt;. Back in my time at university when I studied communication I studied with a professor in Philosophy. He’s interpretation of the word was much more poetic: &lt;em&gt;“A person’s rationale is all the ballast that enables that person to resonate, to make decisions”&lt;/em&gt;. It’s personal!&lt;/p&gt;
+
+&lt;p&gt;So by digging into the underlying, personal rationale, behind why someone is doing something, it suddenly becomes meaningful - to that person.&lt;/p&gt;
+
+&lt;p&gt;The answer to your own question lies within your self: You make the right decision, given the context, based on your rationale. - it reads like a poem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What you don’t have&lt;br /&gt;
+You don’t need it now&lt;br /&gt;
+What you don’t know&lt;br /&gt;
+You can feel somehow&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;U2, A Beautiful Day&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;small-steps-manifesto&quot;&gt;Small Steps Manifesto&lt;/h2&gt;
+&lt;p&gt;It’s obvious that a few lines from a U2 pop song can’t hold a magical answer to a complex problem; how to be a successful manger. But I belive that efficient management implies that people on the team are self-organized, motivated and empowered.&lt;/p&gt;
+
+&lt;p&gt;The small steps manifesto is still emerging, but it reads something like:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Any&lt;/em&gt; decision that is conscious and based on a rationale, and which is bringing you one small step closer to what you are hoping to achieve, is by definition a good decision.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It’s likely that there might be other decisions someone else could have made, that would have been better in the meaning that they would be even more efficient, but they would have the built-in problem, that they wouldn’t be your’s.&lt;/p&gt;
+
+&lt;p&gt;The DORITH principle allows you to learn - it allows you to practice that art of decision making. Find the answer inside yourself, based on your own sense of direction and your own rationale and do &lt;em&gt;something&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;It simply allows you to be tactical - relative to where you are headed.&lt;/p&gt;
+
+&lt;h2 id=&quot;pivot-without-mercy-or-guilt&quot;&gt;Pivot without mercy or guilt&lt;/h2&gt;
+&lt;p&gt;Making decisions based on your own rationale, however conscious they may be, is bound to have some limitations - for all of us. It’s build into the principle, that some of the decisions will doubtlessly be bad or questionable.&lt;/p&gt;
+
+&lt;p&gt;Suck it up!&lt;/p&gt;
+
+&lt;p&gt;A proverb that’s often cited in LEAN and agile is &lt;em&gt;“pivot without mercy or guilt”&lt;/em&gt;. In it’s essence it captures the remedy for how to deal with bad decision: Simply make another decision. Don’t look back, don’t be sorry. Just make another decision, that’s better.&lt;/p&gt;
+
+&lt;p&gt;This of course implies, that we discover when we make bad decisions, and the tools for that are retrospectives and continuous reflections.&lt;/p&gt;</content><author><name>{&quot;picture&quot;=&gt;&quot;/images/authors/lakruzz.png&quot;, &quot;twitter&quot;=&gt;&quot;lakruzz&quot;}</name></author><category term="LEAN" /><category term="agile" /><summary type="html">DORITH is a contraction of sentence “DO the RIght THing”. It’s a principle that enables you to make decisions that will appear to be tactical and still allow you to learn as you go. Understand the in-situ challenge with being tactical and start taking small steps in the right direction.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/blog/dorith.some.jpg" /></entry><entry xml:lang="da-DK"><title type="html">Et Paradigmeskift inden for softwareudvikling</title><link href="https://www.lakruzz.com/da/code+devops+paradigmeskift/" rel="alternate" type="text/html" title="Et Paradigmeskift inden for softwareudvikling" /><published>2016-05-07T00:00:00+02:00</published><updated>2016-05-07T00:00:00+02:00</updated><id>https://www.lakruzz.com/da/code+devops+paradigmeskift</id><content type="html" xml:base="https://www.lakruzz.com/da/code+devops+paradigmeskift/">&lt;p class=&quot;kicker&quot;&gt;Der blæser kraftige nye vinde inden for gængs opfattelse af hvordan software udvikles mest effektivt. Der er tale en tendens, hvor værdien af software alene måles på, hvad der konkret leveres til slutbrugerne og at de faktisk er glade for det de får.&lt;/p&gt;
+
+&lt;p&gt;Det nye er, at softwareindustrien er begyndt at bruge software til at verificere og validere software med. Samtidig med at det er software der implementerer den IT-infrastruktur, som vi alle sammen er afhængige af. For udenforstående virker det måske ret oplagt, at bruge software til den slags opgaver, men det er rent faktisk udtryk for revolutionerende nytænkning.&lt;/p&gt;
+
+&lt;p&gt;Det nye paradigme inden for softwareudvikling og IT går under navne som &lt;em&gt;Continuous Delivery&lt;/em&gt; og &lt;em&gt;DevOps&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;continuous-delivery&quot;&gt;Continuous Delivery&lt;/h2&gt;
+&lt;p&gt;Begrebet &lt;em&gt;Continuous Delivery&lt;/em&gt; er født ud af det første a tolv principper i &lt;a href=&quot;http://agilemanifesto.org/&quot; target=&quot;_blank&quot;&gt;det agile manifest&lt;/a&gt;. Et kampskrift som 17 af datidens mest indflydelsesrige metodetænkere indenfor softwareudvikling forfattede på 3 dage i en skihytte i Utah - i 2001. Manifestet er senere blevet underskrevet af tusindevis af mennesker - Selv signerede jeg tilbage i &lt;a href=&quot;http://agilemanifesto.org/display/000000049.html&quot; target=&quot;_blank&quot;&gt;september 2005&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Det første princip lyder:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Our highest priority is to satisfy the customer&lt;br /&gt;
+through early and continuous delivery&lt;br /&gt;
+of valuable software.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Det agile manifest omfavner de ideer, som oprindeligt er formuleret inden for industrien, og som havde til formål at optimere et produtktionsanlæg eller en produtionsmetode; LEAN, Toyota Production System (TPS), Six Sigma, Total Quality Management (TQM), Product Lines etc.. Agile (eng: adræt) metoder applicerer de samme ideer teknikker og visioner til softwareudviklingsprocessen.&lt;/p&gt;
+
+&lt;p&gt;Agile softwareudvikling er en metode, som ligesom sit ophav i industrien, skaber effektivisering gennem at minimere antallet af opgaver som er i gang samtidig, men til gengæld advokerer, at der ikke findes nogen egentlig faseeinddeling i produktionen. Det er et opgør med vandfaldsmetoder; Når en opgave er meldt færdig, er det fordi den opfylder definitionen af hvad &lt;em&gt;færdig&lt;/em&gt; betyder og den kan afleveres til produktion eller slutbruger.&lt;/p&gt;
+
+&lt;div class=&quot;pic caption center medium&quot;&gt;
+
+
+&lt;img src=&quot;/assets/responsive/510/andon-cord.png&quot; srcset=&quot;            /assets/responsive/255/andon-cord.png 255w,            /assets/responsive/510/andon-cord.png 510w,    &quot; alt=&quot;Andon cord&quot; class=&quot;pic center medium&quot; /&gt;Why Buy A Toyota - Andon Cord&lt;/div&gt;
+
+&lt;p&gt;Agile softwareudvikling er idag et ideal, som på verdensplan gennemsyrer hele softwareindustrien. Men indtil for nylig har der reelt været meget få af de teams og virksomheder, der siger, at de arbejder med agile metoder, som rent faktisk har kunne gøre det, altså levere opgaverne én ad gangen, færdige, direkte i produktion, uden en faseopdelt process.&lt;/p&gt;
+
+&lt;p&gt;En kendsgerning er, at selv den dag i dag, gælder det for langt den overvejende del af alle verdens softwareteams, at &lt;em&gt;udvikling&lt;/em&gt; er adskilt fra &lt;em&gt;integration&lt;/em&gt;, som er adskilt fra &lt;em&gt;udrulning&lt;/em&gt;, som er adskilt fra &lt;em&gt;test&lt;/em&gt; som er adskilt fra &lt;em&gt;driftsætning&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Det er ikke usædvanligt for en gennemsnitlig softwarudviklingsproces, at den tid der går fra en idé om en forbedring er født, og indtil den er leveret til slutbrugeren, går der måneder - nogen gange endda kvarte eller halve år.&lt;/p&gt;
+
+&lt;p&gt;Det hænger ganske enkelt ikke sammen - men de fleste software teams kalder sig agile alligevel.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Continuous Delivery&lt;/em&gt; som begreb er nyt. Det kan helt kort sammefattes som en samling af teknikker og &lt;em&gt;best practices&lt;/em&gt;, som insisterer på, at idealerne inden for Agile gælder. Der skal kontinuerligt leveres software - der er færdigt.&lt;/p&gt;
+
+&lt;p&gt;I fremtiden kommer der ikke flere &lt;em&gt;release parties&lt;/em&gt;. Software - der virker - kommer til at flyde til slutbrugeren i en lind uophørlig strøm.  I fremtiden når en softwareudvikler stolt råber ud i kontorlandskabet til sine kollegaer &lt;em&gt;“Nu virker det på min maskine”&lt;/em&gt; og og indtil det 30 minutter senere også er tilgængeligt for slutbrugeren, der er det formentlig fuldstændig uberørt af menneskehånd - og ikke desto mindre virker det.&lt;/p&gt;
+
+&lt;p&gt;Al verifikation af kvaliteten af softwaren og aftestningen af den er skrevet som software, og kører automatisk i en &lt;em&gt;Continuous Delivery Pipeline&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;devops&quot;&gt;DevOps&lt;/h2&gt;
+&lt;p&gt;DevOps en en sammenskriving af ordene &lt;em&gt;Devlopement&lt;/em&gt; og &lt;em&gt;Operations&lt;/em&gt;, de engelsksprogede begreber for det vi på dansk forstår som softwareudvikling og IT-infrastruktur.&lt;/p&gt;
+
+&lt;p&gt;Hvor Continuous Delivery i stor grad har med softwareudvikling at gøre, men stiller - hvad der for nogen virker som nærmest - urimelig krav til IT-infrastrukturen for at realisere sin vision. Så adresserer DevOps nogle af de samme problemstillinger, blot kommende fra IT-infrastruktur siden og advokerer for at nedbryde de siloer, som softwareudvikling og IT drift traditionelt er opdelt i. DevOps taler for at løse IT-infrastruktur problemer - med software.&lt;/p&gt;
+
+&lt;p&gt;Forestil dig en situation, hvor et software team bliver ambitiøse omkring deres test og derfor går til deres IT afdeling og beder om to ekstra servere til udviklingsteamet, så de kan automatisere nogle flere funktionelle tests, eller udrulninger, eller integrationer eller hvad de nu end har gang i.&lt;/p&gt;
+
+&lt;p&gt;IT afdelingen svarer typisk noget i stil med. &lt;em&gt;“Ja”&lt;/em&gt; eller &lt;em&gt;“nej”&lt;/em&gt; eller &lt;em&gt;“Ja men det bliver dyrt”&lt;/em&gt; eller &lt;em&gt;“Ja men udfyld først lige  den her bestillingsformular”&lt;/em&gt;.  Men faktisk er det komplet ligegyldigt hvad IT afdelingen svarer. I en DevOps vision er der slet ikke nogen sagsbehandling forbundet med at skaffe sig flere ressourcer. Det er altsammen programmeret som software og kører fuldstændig automatisk. DevOps stæber efter en programmérbar infrastruktur.&lt;/p&gt;
+
+&lt;p&gt;Så her er hvad der sker istedet:&lt;/p&gt;
+
+&lt;p&gt;Softwareudvikleren råber stolt, i &lt;em&gt;”Det virker”&lt;/em&gt; (på hans computer) og så gemmer han sine kodeændringer i sit versionsstyringssystem. Derefter er der en overvågningsproces, som automatisk og øjeblikkeligt opdager det, og i et isoleret miljø integrere udviklerens kode med kollegaernes kode. Hvis det går som det skal, så starter det en ny proces, som tester om det nu også stadig virker og hvis det gør, så bliver den integrerede kode afleveret til kollegaerne.&lt;/p&gt;
+
+&lt;p&gt;Processen hertil kaldes ofte for &lt;em&gt;Continuous Integration&lt;/em&gt; og hvis udfaldet er accepteret, så er processen katalysator for at starte en &lt;em&gt;Continuous Delivery pipeline&lt;/em&gt;, som typisk vil foretage en række analyser af koden, for at sikre at den ikke indeholder for store mængder teknisk gæld og derefter vil den automatisk blive udrullet til en produktions-lignende infrastruktur, hvor den funktionelle test  - som i mange virksomheder i dag udføres manuelt i stedet - vil blive udført af software programmer, som tester på 5, 10 eller måske 50 servere i parallel for at opnå en testtid der ligger tættere på 13 minutter end 30 dage.&lt;/p&gt;
+
+&lt;p&gt;Når testen er accepteret fuldstændig uden fejl, så udarbejdes automatisk dokumentation og eventuelt lovpligtige sporbarhedsrapporter, med dokumentation tilbage til de oprindelige krav. Og derefter sættes det i produktion - automatisk.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/responsive/1020/code-story.png&quot; srcset=&quot;            /assets/responsive/255/code-story.png 255w,            /assets/responsive/510/code-story.png 510w,            /assets/responsive/1020/code-story.png 1020w,    &quot; alt=&quot;Continuous delivery Storyline&quot; class=&quot;pic center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Den her proces køre ikke én gang om dagen eller én gang om ugen. Den kører automatisk hver evig eneste gang en softwareudvikler melder klar med en opgave. Det gør han formentlig et par gange om dagen.&lt;/p&gt;
+
+&lt;p&gt;Ovenstående er - indrømmet - en vision for fremtiden. Med undtagelse af nogle få virksomheder, som vi i branchen henviser til som enhjørninge, så er det her ikke hver mands eje - endnu! Men alle softwareteams drømmer om sådan et setup, og rigtig mange har allerede taget hul på rejsen dertil.&lt;/p&gt;
+
+&lt;p&gt;Forestil jer et team på 10 udviklere som tilsammen afslutter 15 opgaver om dagen, og hver opgave kræver en Continuous Delivery pipeline som måske involverer test på 15 processer i parallel.&lt;/p&gt;
+
+&lt;p&gt;Vi kommer til at mangle &lt;em&gt;mange&lt;/em&gt; maskiner.&lt;/p&gt;
+
+&lt;p&gt;Men vi kommer ikke til at bede IT-afdelingen om at skaffe dem til os. I stedet vil vi udviklet software systemer som selv opdager når der er mangel på maskiner og derefter selv starter flere maskiner op automatisk konfigurer dem til præcis den delopgave, som der mangler ressourcer til. Når opgaven er løst lukkes maskinen ned, og ressourcer stilles til rådighed til en anden process, som har brug for den - selv om den måske har brug for en fuldstændig forskellig konfiguration.&lt;/p&gt;
+
+&lt;h2 id=&quot;hvadsomhelst-som-kode&quot;&gt;Hvadsomhelst som kode&lt;/h2&gt;
+&lt;p&gt;I fremtiden vil alle virksomheder være software virksomheder. Lige som der i dag ikke findes en virksomhed, der ikke benytter PC’er i forbindelse med bogføring, administration, tilbudsgivning, markedsføring osv, så vil der i fremtiden ikke findes mange virksomheder, der ikke har behov for en eller anden form for software til at understøtte deres produkt.&lt;/p&gt;
+
+&lt;p&gt;Radiator-termostater, cirkulationspumper, telefonopladere og høretelefoner indeholder software i dag. Selv prisskiltene nede i Kvickly indeholder software.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Software is gonna eat the world.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;send-flere-folk&quot;&gt;Send flere folk&lt;/h2&gt;
+&lt;p&gt;Vi kommer til at mangle mange softwareudviklere i fremtiden, og det er faktisk specielt den type softwareudviklere, som er skolet eller interesseret i at udvikle software, som kan være med til at forbedre software, som vi kommer til at mangle.&lt;/p&gt;
+
+&lt;p&gt;Vi skal passe på at sikre, at vi får uddannet unge folk som kan implementere hvadsomhelst som kode. Softwareudviklere, som er specialiseret i at være generalister, som kan indgå i et fremtidige softwareudviklingsteam og selv om de ikke nødvendigvis ved noget om termodynamik, audiologi eller hvad end det produkt, de arbejder på, har som underliggende domæneviden. Så vil de alligevel være en uvurderlig hjælp til teamet, simpelthen ved at betragte ethvert problem som et software problem, og på den vis bidrage til, at teamet i fremtiden arbejder mellem 100 og 3000 gang mere effektivt, end de gjorde tilbage i 2016.&lt;/p&gt;
+
+&lt;p&gt;Efterspørgslen på folk med disse egenskaber og talenter er allerede enorm. Større end udbudet. Men på trods af dette vakum er der ingen læreansalter eller universiteter, der i dag har disse discipliner med i deres studieordning. Så er vi allerede i underskud - og det kommer til at gøre endnu mere ondt.&lt;/p&gt;
+
+&lt;h2 id=&quot;ulven-kommer---kommer-ulven&quot;&gt;Ulven kommer! - kommer ulven?&lt;/h2&gt;
+&lt;p&gt;Thomas Kuhn, amerikansk fysiker, historiker og filosof, er den oprindelige ophavsmand til begrebet paradigmeskift. Det stammer fra han bog  &lt;em&gt;The Structure of Scientific Revolutions (1962)&lt;/em&gt; og beskriver det fænomen, at der indfinder sig en fundamental ændring i de grundlæggende koncepter og eksperimenterende praksis inden for en videnskabelig disciplin.&lt;/p&gt;
+
+&lt;p&gt;Indenfor softwareudviklingens relativt korte historie, er der blevet råbt pardigmeskift mange gange. En håndfuld eksempler er Objekt Orienterede sprog (OO), Service Orienteret Arkitektur (SOA), selv JAVA og World Wide Web er blevet udråbt til at være revolutionære skift indenfor vores videnskab.&lt;/p&gt;
+
+&lt;p&gt;At råbe &lt;em&gt;“Paradigmeskift!”&lt;/em&gt; Indenfor softwareindustrien er ligesom Peter der råber &lt;em&gt;“Ulv!”&lt;/em&gt; - &lt;em&gt;“Ååh - ikke igen!”&lt;/em&gt;” Tænker nogen, mens andre farer forvildede rundt og rent faktisk tror på, at de er fortabte, hvis ikke de straks styrter afsted i den nye retning.&lt;/p&gt;
+
+&lt;p&gt;Det er relevant at spørge; &lt;em&gt;“er Continuous Delivery og DevOps reelt udtryk for et paradigmeskift?”&lt;/em&gt; Er det virkelig fundamentalt anderledes og udtryk for en anderledes eksperimenterede  praksis end den vi har benyttet indenfor software industrien hidtil?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;- Ja!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Med den teknologi der er udviklet indenfor server virtualisering, cloud og applikations containere er det reelt første gang, siden vi startede med at lave software, at vi ikke behøver at bliver skræmt eller forskrækkede over, at en softwareudvikler gerne vil have 50 private servere til at understøtte, at han ikke melder klar før han reelt er færdig. I dag er det potentiet bare at programmere sin infrastruktur.&lt;/p&gt;
+
+&lt;p&gt;Indenfor server virtualisering er det nye sort, at benytte container-teknologi frem for virtuelle maskiner. Containere bytyder, kort fortalt, at fundamentet - som for en virtuel maskine er hardwaren som den kører på - med container-teknologi løftes et niveau op, så containeren definere sin afhængighed til operativsystemet. Konkret gør det hele konceptet om at virtualisere infrastruktur meget mere light-weight og selv performance under eksekvering er forbedret.&lt;/p&gt;
+
+&lt;p&gt;Førende på dette felt er i øjeblikket Docker, en Open Source teknologi som kører containere på Linux. Docker er helt nyt, det har netop fejret tre-års fødselsdag, og der er flere konkurrerende teknologier på vej. Det bliver stort! I dag er det reelt muligt at realisere visionen om et produktions-lignende infrastruktur med 15 servere i parallel på en MacBook - uden internetforbindelse - på vej hjem i S-toget.&lt;/p&gt;
+
+&lt;p&gt;Open Source teknologier, som i øvrigt ofte indretter deres communities baseret på disse principper, har overtaget store dele af den teknologi som vi troede var ejet tungt af denne verdens mastodonter. IBM, Oracle og Microsoft har måtte se sig slået af Open Source teknologier som Linux, Jenkins, Docker og Git som har udviklet sig med sådan en hast, at tidligere tiders mastodonterne i dag står tilbage som runkedorer, som har opgivet at indhente - i dag har de sluppet taktstokken - de følger bare med.&lt;/p&gt;
+
+&lt;p&gt;I fremtiden er kvalitet noget der er er bygget ind i softwaren når den leveres, det er en del af udviklingsprocessen og ikke bare noget der klistres på bagefter.&lt;/p&gt;
+
+&lt;p&gt;Det er et nyt paradigme. &lt;em&gt;“You ain’t done, until you’re done done”&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tænk-hvis&quot;&gt;Tænk hvis…&lt;/h2&gt;
+&lt;p&gt;Forestil jer for eksempel at vores udskældte Rejsekort var implementeret ud fra disse principper. Overvej kategorien af de uhensigtsmæssigheder som Rejeskortet byder sine brugere: Man kan ikke checke ud hvis bussen er kørt. Selv om man sætter penge ind på sit kort er de først tilgængelige 5 timer senere. Selvom jeg har kort tilknyttet min konto, skal jeg alligevel forudbetale mine rejser. Selvom min telefon har fuldstændig styr på hvor jeg er, så har rejeskortet ikke et clue om, hvordan de kan udnytte den teknologi til noget fornuftig.&lt;/p&gt;
+
+&lt;p&gt;Alle disse problemer er relativt enkle at løse med software, det er den faseopdelte, manuelle, ineffektive arbejdsproces, der er problement her. Det er forestillingen om at man ikke skal have kontakt til slutbrugeren, før produktet er færdigt. Hvis rejsekortet havde været udviklet udfra agile metoder og softwareudviklerne havde haft en Continuous Delivery pipeline, altså hvis han have haft adgang til at teste opimod definitionene af &lt;em&gt;færdig&lt;/em&gt; mens han udviklede, så havde disse fejl slet ikke været præsenteret for brugerne.&lt;/p&gt;
+
+&lt;p&gt;SKAT’s EFI havde bare rettet sine fejl når de blev opdaget, Rigspolitiets PolSag havde været sat i produktion 2 år tidligere - så havde man vidst det ikke performede som det skulle - og fixet det. Det samme gælder for Arbejdsskadesstyrelsens PROASK.&lt;/p&gt;
+
+&lt;p&gt;Idag sidder både SKAT, ASK og Rigspolitiet og er tilbage og kæmpe med deres IT systemer, som var forældede allerede for 10 år siden - mens milliarder er spildt på ingenting.&lt;/p&gt;
+
+&lt;p&gt;Rejsekortet var så lang tid undervejs i sin glasklokke uden slutbrugerkontakt, at det var gammel teknologi allerede inden man begyndte at tage det i brug.&lt;/p&gt;
+
+&lt;p&gt;I den samme periode har Google indekseret hele internettet, Tesla har udviklet en bil der køre på elektricitet, som kan accelerere hurtigere end verdens hidtil hurtigst serieproducerede bil - og som kan opdatere sin software med nye features mens den står og lader op. Netflix har ved hjælp af software ændret hele den vestlige verdens TV vaner. Facebook har med software skabt en hel ny generation, som i dag ikke engang ved hvad en email er og Spotify kom ingen steder fra og revolutionerede hele verdens musikbranche og løste et uløseligt problem.&lt;/p&gt;
+
+&lt;p&gt;Altsammen gjort med software - Det er vore enhjørninge.&lt;/p&gt;
+
+&lt;h2 id=&quot;hvad-skal-vi-gøre&quot;&gt;Hvad skal vi gøre?&lt;/h2&gt;
+&lt;p&gt;Vores virksomhed, &lt;a href=&quot;http://www.praqma.com&quot; target=&quot;_blank&quot;&gt;Praqma&lt;/a&gt;, er specialiseret i - hvad der stadig må betegnes som - en niche. Vi hjælper virksomheder, som tror på det nye paradigme med at realisere deres fulde potentiale indefor Continuous Delivery og DevOps. Vi har selv skabt mere ind 35 Open Source projekter. Vi rekrutterer vores senior eksperter rundt omkring i store virksomheder, hvor de ofte sidder alene og betjener stabsfunktioner, uden anerkendelse og uden budget. Mange af vores folk lærer vi op selv gennem praktikforløb og intensiv sidemandsoplæring i deres første år.&lt;/p&gt;
+
+&lt;p&gt;I dag er vi 25, for halvandet år siden var vi 8. Vi har kontorer i Danmark. Norge og Sverige - og vi har åbne ubesatte stillinger alle tre steder.&lt;/p&gt;
+
+&lt;p&gt;Igennem nogle år har vi tilbudt at komme ind på universiteterne og læreanstalterne og undervise i nogle af de principper og teknologier, som softwareindustrien skriger på. Vi har undervist på Computer Science på Københavns Universitet (DIKU) og Lunds universitet (LTHCS), vi har undervist på IT-universitetet i København og på CPHBusiness Academy i Lyngby.&lt;/p&gt;
+
+&lt;p&gt;Og det virker! Vi har rekrutteret studerende, som vi selv har været ude og undervise.&lt;/p&gt;
+
+&lt;p&gt;Skandinavien er traditionelt set en region, som nyder stor anerkendelse indenfor softwareudvikling. Vi vil meget gerne - forhåbentlig i samarbejde med universiteter og læreanstalter - være med til at sikre, at Skandinavien får status af at være med blandt dem, som tog initiativet til at løse dette konkret samfundsproblem.&lt;/p&gt;
+
+&lt;p&gt;Denne sommer har vi formaliseret undervisningen i et &lt;a href=&quot;http://www.code-conf.com/academy2016&quot; target=&quot;_blank&quot;&gt;Continuous Delivery Academy&lt;/a&gt;, Hvor vi hen over sommeren underviser på fire forskellige lokationer, Trondheim, København, Århus og Oslo, med op til 100 deltagere på hvert academy.&lt;/p&gt;
+
+&lt;div class=&quot;pic caption center medium&quot;&gt;
+
+
+&lt;a href=&quot;http://www.code-conf.com/academy2016&quot; target=&quot;_blank&quot;&gt;
+
+&lt;img src=&quot;/assets/responsive/1020/code-academy-2016-front.jpg&quot; srcset=&quot;            /assets/responsive/255/code-academy-2016-front.jpg 255w,            /assets/responsive/510/code-academy-2016-front.jpg 510w,            /assets/responsive/1020/code-academy-2016-front.jpg 1020w,    &quot; alt=&quot;Continuous Delivery Academy&quot; class=&quot;pic center medium&quot; /&gt;&lt;/a&gt;CoDe Academy er en 5 dages workshop, som er gratis for studerende, køre i 4 universitetsbyer i Skandinavien hen over sommeren 2016&lt;/div&gt;
+
+&lt;p&gt;Undervisningen kører som træning over 5 dage i intensive workshops, Vi underviser i metoder som &lt;em&gt;Test Driven Devlopement&lt;/em&gt; (TDD) og Agile opgavestyring samt Open Source teknologier som &lt;a href=&quot;https://git-scm.com/&quot; target=&quot;_blank&quot;&gt;Git&lt;/a&gt;,
+&lt;a href=&quot;https://jenkins.io/&quot; target=&quot;_blank&quot;&gt;Jenkins&lt;/a&gt;
+og &lt;a href=&quot;https://www.docker.com/&quot; target=&quot;_blank&quot;&gt;Docker&lt;/a&gt;. På den sidste dag i kurset, skal eleverne sætte det hele sammen til en fungerende &lt;em&gt;Continuous Delivery pipeline&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Undervisningen er gratis, hvis man er studerende på en Computer Science relateret uddannelse. Vi har allokeret tre underviserer på hvert academy og at vi beregner omtrent ligeså meget forberedelsestid som vi har undervisning, Samlet set påregner vi, i vores virksomhed, at levere 120 mandedage på dette projekt. Omkostningerne er sponsoreret af 5 lokale virksomheder per academy, altså 20 sponsorere i alt (bl.a. &lt;a href=&quot;http://drives.danfoss.dk/&quot; target=&quot;_blank&quot;&gt;Danfoss&lt;/a&gt;, &lt;a href=&quot;http://www.napatech.com/&quot; target=&quot;_blank&quot;&gt;Napatech&lt;/a&gt;), der som tak får deres støtte til projektet får lejlighed til at tale til de studerende og mødes med dem til en barbeque på akademiets sidste dag - og potentielt rekruttere studenterarbejdere til at udføre noget af dette vigtige arbejde i deres organisationer.&lt;/p&gt;
+
+&lt;p&gt;Foruden lokale sponsorer har vi et antal teknologisponsorere med, blandt andet &lt;a href=&quot;http://www.github.com&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;men-hvorfor&quot;&gt;Men hvorfor?&lt;/h2&gt;
+&lt;p&gt;Målet er dels, at vi håber på at kunne tænde lyset i øjnene på en håndfuld af de studerende, så de indser, at der ad denne sti ligger en interessant karrierevej og venter.&lt;/p&gt;
+
+&lt;p&gt;Derudover håber vi, at universiteter og læreanstalter vil tillade noget af deres  personale at deltage i vores &lt;em&gt;train-the-trainer program&lt;/em&gt;. Som i al sin enkelthed går ud på, at lærere fra universiteter og læreanstanlter deltager i undervisningen de fem dage på lige fod med de studerende, men derudover, også deltager i en særlig workshop om aftenen efter den første dag, hvor vi gennemgår kursusmaterialet for dem, og stiller det gratis til rådighed for universiteterne, så de selv kan oprette kurser på deres uddannelser med lignende  indhold.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I den sidste ende er målet at entydigt at sike, at der i fremtiden er flere mennesker der forstår og mestrer det her paradigme.&lt;/strong&gt;&lt;/p&gt;</content><author><name>{&quot;picture&quot;=&gt;&quot;/images/authors/lakruzz.png&quot;, &quot;twitter&quot;=&gt;&quot;lakruzz&quot;}</name></author><category term="Continuos  Delivery" /><category term="DevOps" /><category term="Paradigmeskift" /><summary type="html">Der blæser kraftige nye vinde inden for gængs opfattelse af hvordan software udvikles mest effektivt. Der er tale en tendens, hvor værdien af software alene måles på, hvad der konkret leveres til slutbrugerne og at de faktisk er glade for det de får.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/blog/code-story.png" /></entry><entry><title type="html">WolfWare - 2016 Republish Preface</title><link href="https://www.lakruzz.com/en/wolfware-republished/" rel="alternate" type="text/html" title="WolfWare - 2016 Republish Preface" /><published>2015-12-29T00:00:00+01:00</published><updated>2015-12-29T00:00:00+01:00</updated><id>https://www.lakruzz.com/en/wolfware-republished</id><content type="html" xml:base="https://www.lakruzz.com/en/wolfware-republished/">&lt;p class=&quot;cuff&quot;&gt;WolfWare and the bloody but, yet edifying, tale about The Bonnie Situation and why Mr. Wolf surely must be a role model for every consultant is now republished after 7 years off line.&lt;/p&gt;
+
+&lt;p&gt;The concept of WolfWare is one I came up with back in 2005. At that time I was working as a self-employed consultant, and I had more work requests than I could handle myself. I felt that it was time to organize and consolidate into a company and WolfWare was my first shot at it. It was meant to be a collaboration of really skilled people. So good that people would take pleasure in seeing them work.&lt;/p&gt;
+
+&lt;p&gt;Part of the WolfWare concept was a retelling of the bloody but edifying tale of &lt;em&gt;The Bonnie Situation&lt;/em&gt;, one of the side-stories in Tarantino’s movie &lt;em&gt;Pulp Fiction&lt;/em&gt;, and an interpretation of the story that reveals why Mr. Wolf is a role model for al consultants.&lt;/p&gt;
+
+&lt;p&gt;Recently I found the story from way back then at the &lt;a href=&quot;http://web.archive.org/&quot; target=&quot;blank&quot;&gt;WayBackMachine&lt;/a&gt; and I’m republishing it here at these pages because it’s still highly relevant - and edifying.&lt;/p&gt;
+
+&lt;p&gt;The original story has several parts:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/wolfware/intro/welcome&quot; class=&quot;wolf-item&quot;&gt;The Introduction&lt;/a&gt;
+&lt;a href=&quot;/wolfware/intro/bonnie&quot; class=&quot;wolf-item&quot;&gt;The retelling of &lt;em&gt;The Bonnie Situation&lt;/em&gt;&lt;/a&gt;
+&lt;a href=&quot;/wolfware/intro/interpretation&quot; class=&quot;wolf-item&quot;&gt;The interpretation&lt;/a&gt;
+&lt;a href=&quot;/wolfware/concept/revelation&quot; class=&quot;wolf-item&quot;&gt;The revelation of the WolfWare concept&lt;/a&gt;
+&lt;a href=&quot;/wolfware/pack/thepack&quot; class=&quot;wolf-item&quot;&gt;An invitation to join &lt;em&gt;The Pack&lt;/em&gt; of Mr. Wolves&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;looking-back-at-what-actually-happened&quot;&gt;Looking back at what actually happened&lt;/h2&gt;
+
+&lt;p&gt;Today when I write this, just a few days before the New Year 2016. &lt;a href=&quot;https://www.praqma.com&quot; target=&quot;praqma&quot;&gt;Praqma&lt;/a&gt;, of which I’m one of the original founders, is a reality. We started in 2007 and 6-7 years later we made it through the financial crises, it looked like we we’re going to make it after a relative slow start.&lt;/p&gt;
+
+&lt;p&gt;Up until the beginning of 2015; honestly we we struggling to kick-start or start-up. But then came 2015.&lt;/p&gt;
+
+&lt;p&gt;In less than 12 months we have grown from 8 to 21 people, we have grown out of our old &lt;em&gt;PraqmaPlex&lt;/em&gt; office and we now have 5 offices in total, including one in each of the three Scandinavian capitals.&lt;/p&gt;
+
+&lt;p&gt;I’m happy and proud to say that in reality WolfWare manifested itself in the sum of all that we’ve done: &lt;a href=&quot;https://www.praqma.com&quot; target=&quot;_blank&quot;&gt;Praqma&lt;/a&gt;, the &lt;a href=&quot;https://www.code-conf.com&quot; target=&quot;_blank&quot;&gt;CoDe conferences&lt;/a&gt;, &lt;a href=&quot;http://alliance.praqma.com&quot; target=&quot;_blank&quot;&gt;Continuous Delivery Alliance&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Today we call the Wolves CoDe’ers (Continuous Delivereres) but it’s basically the same thing, and we’re still &lt;a href=&quot;https://www.praqma.com/about/jobs/&quot; target=&quot;praqma&quot;&gt;hiring&lt;/a&gt; and we’re still expanding into new countries and even new businesses.&lt;/p&gt;</content><author><name>Lars Kruse</name></author><category term="WolfWare" /><summary type="html">WolfWare and the bloody but, yet edifying, tale about The Bonnie Situation and why Mr. Wolf surely must be a role model for every consultant is now republished after 7 years off line.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/authors/lakruzz.png" /></entry><entry><title type="html">Kovalam - Tourist Anywhere</title><link href="https://www.lakruzz.com/en/kovalam+tourist+anywhere/" rel="alternate" type="text/html" title="Kovalam - Tourist Anywhere" /><published>2014-12-27T00:00:00+01:00</published><updated>2014-12-27T00:00:00+01:00</updated><id>https://www.lakruzz.com/en/kovalam+tourist+anywhere</id><content type="html" xml:base="https://www.lakruzz.com/en/kovalam+tourist+anywhere/">&lt;h2 id=&quot;kovalam-lighthouse-beach&quot;&gt;Kovalam lighthouse beach&lt;/h2&gt;
+
+&lt;p&gt;Kovalam is the center of ayurvedic massage, medicine and treatments in whole of Kerala. People come her for 1-2-3 week stays. They get treated for all kinds of diseases or they go here to just get better in general. We arrived here after an almost five hour train ride and then the last 20 km i two cars.&lt;/p&gt;
+
+&lt;p&gt;The train was actually a great experience. We had bought the luxury tickets on first class with aircondition (500 rupees, slightly less then 7 euros).&lt;/p&gt;
+
+&lt;p&gt;Traveling by train seems like a great way to travel in India. Although the train wasn’t in any way luxury or fancy. We sat on benches in a coupe with an Indian guy who played music  from his phone during the most of the ride and a father and daughter travelling together. Marie and Ulrich chatted with them for several hours. Two men was walking up and down the aisle selling foods, thai and coffee. We had a great ride.&lt;/p&gt;
+
+&lt;p&gt;We’ve arrived to our new destination, the Beach Hotel II, which is nice, overlooking the Kovalam Lighthouse Beach from the south. But it’s also very different from anything else we’ve seen in India.&lt;/p&gt;
+
+&lt;p&gt;This place could be Greece, Spain or Italy. It’s suddenly not obvious that we’re in India. This is more like &lt;em&gt;Tourist Anywhere&lt;/em&gt;. Even the prices in the restaurant menu changed to European level. Neither water nor WiFi is complementary. Well all guests here are Europeans so I guess it makes sense.&lt;/p&gt;
+
+&lt;p&gt;The Lighthouse beach lies in a small bay that’s probably less than 500 meters across. A paved walk runs along the bay with the beach on one site and small shops and restaurants on the other. The shops are selling the usual souvenir goods; beach mattresses, bracelets, sunshades, water, ice creams and then there’s all the seaside restaurants in between. Every shop and restaurant has at least one person on the walk in front of the business, sometimes even two or three.&lt;/p&gt;
+
+&lt;p&gt;“Come in inside”, “Come look”, “seafood”, “Sir, where are you from?”, “come inside”, Come inside”, “come inside”.&lt;/p&gt;
+
+&lt;p&gt;…that was 20 meters so 500 meters can feel long before you get there.&lt;/p&gt;
+
+&lt;p&gt;People here aren’t as friendly as we’ve gotten used to. They are basically just hustling.&lt;/p&gt;
+
+&lt;p&gt;Some of them even have signs on the shop front saying “hassle free shop”, while nevertheless you’re being hassled.&lt;/p&gt;
+
+&lt;h2 id=&quot;indians-cant-swim&quot;&gt;Indians can’t swim&lt;/h2&gt;
+&lt;p&gt;As we’ve reached the end of the bay an new one at the exact same size reveals itself only separated by an old lighthouse. This is Hawa beach and this place is completely packed with people. All are local Indians and all of them are fully clothed. Most of them have stepped into the water at about waist depth.&lt;/p&gt;
+
+&lt;p&gt;They are playing in the large waves as they break - fully clothed, men and women alike; jeans, shirts, dresses, saris, scarfs.&lt;/p&gt;
+
+&lt;p&gt;A small guy in blue shorts and shirts, runs around on the beach and waves a red flag and blow his whistle everytime someone gets in deeper than the waist. After a while his waving and whistling goes completely crazy and he starts pointing to an imaginary wristwatch. The interpretation is universal “It’s time to get up”. In matter of few minutes the guy has singlehandedly pulled 300 people out of the water.&lt;/p&gt;
+
+&lt;p&gt;We’re thinking &lt;em&gt;sharks&lt;/em&gt;. We’ve seen the same eager type of beach guard in Cocoa Beach pull people out when sharks were spotted. But then again, as far as we know, there aren’t any sharks in these waters. We simply go and ask the guy whats happening. His english is sufficient to explain that the undertow is strong so Indians can not go deeper in than  the waist - since they can’s swim. And the last stunt was just because it’s six o-clock. The beach closes at six.&lt;/p&gt;
+
+&lt;p&gt;Based on the fact that these people can’t swim I understand why the beach guard was so eager with his whistle. Some of the waves here are 1.5 meters high as they break and still hundreds of Indians are running like lemmings that can’t swim into the water, only stopping when they hear the whistle.&lt;/p&gt;
+
+&lt;p&gt;Makes me wonder what the statistics for drowning accidents are on this Hawa beach.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-other-side&quot;&gt;The other side&lt;/h2&gt;
+&lt;p&gt;I’m ill. still.&lt;/p&gt;
+
+&lt;p&gt;I’ve been eating painkillers for 3 days now, hoping that my aching throat will eventually heal.&lt;/p&gt;
+
+&lt;p&gt;At noon I fell OK to take a short walk, I go to see the view from the lighthouse, I see a huge moske across another bay that lies towards south. I start walking towards it through small paths that follows the steep cliffs. I come to a street and sees that it leads straight to the huge pale green mosk, As I reach it I see across another bay that there are hundreds of people on the beach in the distance and there are hundreds and hundreds of boats both in the water and on the beach.&lt;/p&gt;
+
+&lt;p&gt;A city, a harbour and a market et seems like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/DSCN1584.JPG&quot; alt=&quot;Green mosk&quot; class=&quot;stdright&quot; /&gt;The road goes on behind the mosk I walk towards it some 50 meters. Then the atmosphere  suddenly changes dramatically. People aren’t smiling an saying “hello” any more, they are basically ignoring me.&lt;/p&gt;
+
+&lt;p&gt;This is a very poor area, completely different form the &lt;em&gt;tourist anywhere&lt;/em&gt; atmosphere I left at the lighthouse beach. I bet thees people don’t deal much with tourists. I walk to the fish market on a beaches with fishing boats pulled up to it. Between the boats are smelly excrements - from humans it appears a few moments later - as I surprise three men sitting in squat position with their loincloth pulled high upon their backs and everything else dangling out from underneath. They are chatting with each others, the see me, but the completely ignore me.&lt;/p&gt;
+
+&lt;p&gt;OK, so in the slum areas the beach is the toilet. At this point I’m probably 1 and a half kilometer off from &lt;em&gt;tourist anywhere&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/DSCN1597.JPG&quot; alt=&quot;Fish market&quot; class=&quot;stdleft&quot; /&gt;I continue through more narrow paths, where people live and work. I’m headed to the fish market. When I arrive it appears that it’s a quite hectic city, and it seems large. Later, when I’m back online I learned that the city is &lt;a href=&quot;https://www.google.dk/maps/place/Vizhinjam,+Kovalam,+Kerala,+India/@8.3866189,77.0071762,14z/data=!3m1!4b1!4m2!3m1!1s0x3b05a5960e90dc0f:0x6b20102f6af4ca2a&quot;&gt;Vizhinjam&lt;/a&gt;. At the fishmarket I’m catching eye contact with a woman sitting with a basket of fish in front of her.&lt;/p&gt;
+
+&lt;p&gt;Rookie mistake.&lt;/p&gt;
+
+&lt;p&gt;She turns her head into the crowd on the beach and shouts something, maybe to her her husbond or her brother or her cousins. Well probably she shouts to all of them, because a few seconds later I’m surrounded by four guys who are trying to sell me fish from the woman’s basket. 900 rupees for a 3 kilo beautiful redfish. I’m telling them that “I don’t have anywhere to store the fish, I’m staying at a hotel”. 700 rupees? “I don’t need a fish” I’m trying to explain. 500 rupees?&lt;/p&gt;
+
+&lt;p&gt;I sense I’ll better be off. The then woman points at my small camera, I though I had it hidden in my hand. “Picture, picture”. OK, let’s settle this - I’ll take a picture.&lt;/p&gt;
+
+&lt;p&gt;Rookie mistake.&lt;/p&gt;
+
+&lt;p&gt;Now she wants money,  and her husbond, uncle, cousin and brother also want’s her to have money. I fumble to find 10 rupees in my pocket and hand them to her, she’s not content. I’m out of here. I turn on my heels and walk away towards the city away from the fishmarket. Thinking that it might not work like that, maybe her relatives will insist that a photo is worth more then 10 rupees. Nobody follows me.&lt;/p&gt;
+
+&lt;p&gt;I’m headed back to &lt;em&gt;tourist anywhere&lt;/em&gt; I guess.&lt;/p&gt;
+
+&lt;p&gt;A guy comes up to me and walks besides me, he is friendly. He probably saw the fish incidence, his name is John, he lives here, he tells that his family has been fishermen in this village for 11 generations. That pretty much equals &lt;em&gt;forever&lt;/em&gt;. He suggests that I take a tuk tuk a little further south to see a very spectacular church they have there and then have the same tuk tuk drive me back to Lighthouse beach. The tuk tuk drive doesn’t speak English but John explains it to him.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/DSCN1599.JPG&quot; alt=&quot;Church&quot; class=&quot;stdleft&quot; /&gt;The church is truly spectacular and there’s a crowd of women blocking the entrance. They move aside and make a path for me as I approach them, I drop my sandals and go inside. The alter is huge like the screen in a cinema. As I walk out of the church, all the women are coming in - behind six men carrying a small cuffing on their sdhoulders. I’m at a funeral! I step aside and make my self very small, I feel like an intruder. But nobody sees me.&lt;/p&gt;
+
+&lt;p&gt;My tuk tuk drive explains that it’s an eight year old boy they are burying. He drives me back to my hotel by the same path that I walked here myself. I would have sworn that a tuk tuk wouldn’t fit on this path.&lt;/p&gt;
+
+&lt;p&gt;Open your eyes and you’ll learn.&lt;/p&gt;</content><author><name>Lars Kruse</name></author><category term="Kerala in India" /><category term="Kovalam" /><summary type="html">Kovalam lighthouse beach</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/authors/lakruzz.png" /></entry><entry xml:lang="da-DK"><title type="html">Jul i Cochin</title><link href="https://www.lakruzz.com/da/christmas+in+cochin/" rel="alternate" type="text/html" title="Jul i Cochin" /><published>2014-12-24T00:00:00+01:00</published><updated>2014-12-24T00:00:00+01:00</updated><id>https://www.lakruzz.com/da/christmas+in+cochin</id><content type="html" xml:base="https://www.lakruzz.com/da/christmas+in+cochin/">&lt;p class=&quot;kicker&quot;&gt;I aften er det juleaften, Den første sne er allerede faldet - Bare ikke her. Vi er i Cochin, en millionby i Kerala, Indiens sydligste stat. I går tog vi den store tur rundt i byen og så alle turistfælderne. I dag er vi derfor helt uden forpligtelser.&lt;/p&gt;
+
+&lt;p&gt;Det viser sig at Cochin i år er hjemsted for en stor kunst biennale, og byen kan derfor, udover alle sine UNESCO kurturarv seværdigheder fra den allertidligste kolonitid, også byde på en mangfoldighed af kunstudstillinger spredt ud over hele byen.&lt;/p&gt;
+
+&lt;p&gt;Set fra en standard turists perspektiv, så er det den del af Cochin som hedder &lt;em&gt;Fort Cochin&lt;/em&gt; der er interessant. Vores hotel ligger på Vypin island, som er en ø der ligger umiddelbart nord for Fort Cochin.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/DSC_0858.JPG&quot; alt=&quot;Vypen ferry service&quot; class=&quot;stdleft&quot; /&gt; Mellem Fort Cochin og Vypin er der to ramponerede færger som sejler i pendulefart frem og tilbage, selve overfarten tager bare 5 minutter. Færgen er konstureret, eller vel snarere &lt;em&gt;ikke-konstrueret&lt;/em&gt; på en sådan vis, at alle biler skal bakke ombord på færgen, når de er på plads komme alle motorcyklerne ombord og derefter fodgængerne. Ideen er tydeligvis bilerne skal først af, derefter skal motorcyklerne så køre ned agter på færgen og rundt om færgens førerhus og vende, for så at køre ud.&lt;/p&gt;
+
+&lt;p&gt;Med det virker ikke.&lt;/p&gt;
+
+&lt;p&gt;Alle motorcyklisterne, synes at den tur ned på skibets agterende er så lang og urimelig at de hellere vil vende om og komme først ud. Problemet er blot, at det faktisk ikke er særlig nemt at vende en motorcykel, når man står tæt sammen op ad 50 andre motorcykler, der ligesom en selv er ved at vende, og det på et sted hvor der faktisk ikke er plads til det. Så de kæmper og vender og skubber og gasser op og vender og til sidst slipper den første fri, så to mere, så fem, så en enkelt bil, og så er der hul.&lt;/p&gt;
+
+&lt;p&gt;Der er naturligvis også “kombardo” mænd på færgen, men de blander sig ikke i hvordan folk kommer af færgen - kun hvordan de kommer på.&lt;/p&gt;
+
+&lt;p&gt;For at komme til Fort Cochin skal vi altså først køre tuk tuk ca 3 km til færgen og så over med den. En færgebillet koster 3 rupee, det vil sige vi kommer alle fem over for halvanden krone. Det er vist billigt, selv efter indisk målestok.&lt;/p&gt;
+
+&lt;p&gt;Denne julemorgen - den 24 december - tager Niels, Marie og Ulrich alene afsted ud i byen og Heidi og jeg tager tilbage til det jødiske kvarter, et område som vores tuk tuk-fører fra i går kaldte for &lt;em&gt;magic market&lt;/em&gt;. Hvis man køber et sølvsmykke, så bliver det, helt magisk, til messing efter noget tid og hvis man køber en grøn kjole, så vil den, helt magisk, skifte farve når den er blevet vasket.&lt;/p&gt;
+
+&lt;p&gt;Vi går på kunstudstillinger og finder også et snedkerværksted, som viser sig også at være et museeum, med samlinger fra gamle templer. Men i modsætning til et traditionelt museum, så er de udstillede genstande her faktisk til salg. Jeg tror ikke det er dem alle der er gamle.&lt;/p&gt;
+
+&lt;p&gt;Det er ikke den rigtige juleaften i aften.&lt;/p&gt;
+
+&lt;p&gt;Hernede i Kerala er hovedparten af befolkningen kristne katolikker. Så julen starter i nat med midnatsgudstjenester og først i morgen aften holder de lokale fest. Men som danskere er det naturligvis i aften at jesusbarnets fødsel skal fejres.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/DSCN1530.JPG&quot; alt=&quot;Juleaften på Fusion Bay&quot; class=&quot;stdright&quot; /&gt;Vi har booket bord på &lt;em&gt;Fusion Bay&lt;/em&gt; som er den resturant på Tripadvison, der har scoret højst i Cochin. Selve resturanten ser ikke ud af noget særligt. Der en 5 vifter i loftet som kørere med overclocked hastighed. Dækkeservietterne af papir blafrer højlydt i stormen. På et tidspunkt spørger vi tjeneren om man kan skrue lidt ned, men sådan en vifte er ikke så sofistikeret. Enten er den tændt eller også er den slukket, og den her bliver ikke slukket - så tomme vandflasker og sodavandsdåser vælter rundt på bordet.&lt;/p&gt;
+
+&lt;p&gt;Selv om vi er godt forvent fra de første fem dage i Dewalokam. Så lever maden fint op til vores forventninger, måske lige med undtagelse af en hovedret som  Marie og jeg deler, det var et lidt for tørt stykke marineret og grillet tun, men alt andet er virkelig fint.&lt;/p&gt;
+
+&lt;p&gt;Det var så den juleaften.&lt;/p&gt;
+
+&lt;p&gt;Herefter er det bare hjem med færge og tuk tuk. Vi er stadig friske og klare i hovederne, ingen af os har fået så meget som en dråbe alkohol, det bruger man slet ikke på restuaranterne hernede i Kerala.&lt;/p&gt;
+
+&lt;h2 id=&quot;den-rigtige-juleaften&quot;&gt;Den rigtige juleaften&lt;/h2&gt;
+&lt;p&gt;Dagen efter, den 25. december, er det jul i Kerala. Jeg har fået aircondition syge og har ondt i halsen og en næse der bare løber. Ulrich er også mest til at ta’ en stille første juledag med en bog, så det er bare Marie, Niels og Heidi der tager den sædvanlige tuk-tuk-færge tur til Cochin. Niels kobler sig tidligt fra de to andre og tourer rundt i Cochin på egen hånd i tuk tuk. Marie og Heidi går på kunstudstilligner.&lt;/p&gt;
+
+&lt;p&gt;Vores hotel på Vypin island ligger i et relativt fattigt kvarter, som primært er befolket af de lokale fiskere. Her er absolut ingen turister eller attraktioner. Fra hovedvejen går der en grusvej ind i baglandet, ca 150 meter langs simple huse, der typisk bare har et enkelt rum og måske et køkken. For enden af vejen er der en bom og et vagthus, her sidder der en mand i uniform og betjener bommen for hotellets gæster.&lt;/p&gt;
+
+&lt;p&gt;Hotellet er hvidmalet, 3 etager højt, det ligner en kæmpestor villa. Foran er der kunstig sø med vandcykler, en lille pool, legeplads, basketball bane. Det er ikke ligefrem noget der blender ind i miljøet her i det fattige fiskerkvarter. Det ligner mere &lt;em&gt;Swan and Dolphin hotel&lt;/em&gt; i Disneyworld som vi besøgte i Florida.&lt;/p&gt;
+
+&lt;p&gt;Personalet her er uniformeret, helt utroligt hjælpsomme og smilende og i receptionen rejser de sig op fra stolene så snart man kommer ind igennem metaldetektoren - som naturligvis bipper hver gang går igennem den, uden at nogen synes at det er værd at notere.&lt;/p&gt;
+
+&lt;p&gt;De har en ting med metaldetektorere herende.&lt;/p&gt;
+
+&lt;p&gt;I aften er der fest på hotellet. Programmet siger 7:00pm til 10:00pm og middagen kan &lt;em&gt;ikke&lt;/em&gt; fravælges. Alle som bor på hotellet den 25 december betaler 500 rupees (ca 50 kr) for at være med. Det er en kæmpe buffet, to live bands og fyrværkeri.&lt;/p&gt;
+
+&lt;p&gt;Personalet har pyntet op på basketballbanen hele dagen. Hele hotellet, vagthuset, træerne langs søen, faktisk alting som er højere end 2 meter er pakket ind i lyskæder i hvide, blå og røde lys.&lt;/p&gt;
+
+&lt;p&gt;Det er en stor fest, ingen tvivl om det.&lt;/p&gt;
+
+&lt;p&gt;Vi lærte under vores ophold på Dewalokam, at tid og aftaler er noget som indere passer meget nidkært. Det viser sig dog, at det ikke er et generelt indiske fænomen, men nok snarer snævert releatert til Sinta og Jose på deres homestay. Men vi tropper naturligvis op klokken 7, sharp. Bortset fra et ældre engelsk ægtepar er her ikke et øje.&lt;/p&gt;
+
+&lt;p&gt;En af hotellets ansatte fortæller os, at det først er klokken 7:30pm. “Jamen programmet siger 7:00pm” indvender vi. Den glade inder forklarer os, at det er sådan man gør i indien, man inviteret til 7:00 hvis man gerne vil have at folk kommer klokken 7:30. Så men &lt;em&gt;skriver&lt;/em&gt; 7:00 men mundtligt giver man beskeden at det er 7:30 der er det rigtige tidspunkt.&lt;/p&gt;
+
+&lt;p&gt;Lidt besværligt måske, i hvert tilfælde indtil man lige har lært det.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/DSCN1540.JPG&quot; alt=&quot;X-mas party&quot; class=&quot;stdleft&quot; /&gt;Det viser sig, at det nok ikke er en halv men snarere en hel times tid man skal regne som margin. Foruden de to englændere der sidder og stritter ligesom os selv, så kommer der ikke et øje før klokken er 3 minutter over otte. Ti minutter i otte blev selv personalet nok været lidt utålmodige så de skruede op for musikken, som for at sende det signal til gæsterne, som måtte forventes at sidde på deres hotelværelser og kigge ned på den fest, som de var inviteret til, men som ikke var startet endnu, at “nu må i gerne komme”&lt;/p&gt;
+
+&lt;p&gt;De skruede vel at mærke - Helt op!&lt;/p&gt;
+
+&lt;p&gt;Så gæsterne på deres hotelværelser kunne ikke længere være i tvivl.&lt;/p&gt;
+
+&lt;p&gt;Musikken er et tekno mix, jeg tror det er hjemmelavet af det band der skal tage over på lydsiden lige om lidt, det er bidder af Rihanna krydret med noget som måske er et standard riff fra et keyboard. Ikke stor kunst. Men det bliver der rigeligt kompenseret for med volume knappen&lt;/p&gt;
+
+&lt;p&gt;Så nu sidder der er altså et engelsk ægtepar, de er nok begge omkring 75 år, de sidder klinet op ad en højtaler som spiller så højt at den forvrænger. De to englændere ser sure ud - meget sure.&lt;/p&gt;
+
+&lt;p&gt;Vi andre er ved at knække sammen i et grineanfald. Det er en grotsk komisk situation. Niels skriger af sine lungers fulde hals “DET TEGNER TIL TIL AT BLIE EN RIGTIG HYGGELIG FEST”, men jeg tror kun det er mig, der sidder ved siden af ham der hører det.&lt;/p&gt;
+
+&lt;p&gt;Til sidst rejser Marie sig op og griber fat i en af tjenerne og beder dem om at skrue ned, og næremst som om at det var præcis dét de ventede på slukker de øjeblikkeligt for musikken  - og bandet begynder at synge.&lt;/p&gt;
+
+&lt;p&gt;Bandet består af en keyboard spiller og en sanger. Ham på keyboard ligger ud med at  prøve at ramme tonerne til &lt;em&gt;jingle bells&lt;/em&gt;, men det lykkes ikke. Jeg tror dybest set slet ikke at han kan spille på et tangent instrument. Jeg tror han blot er ham der programmer keyboardet. Han giver også relativt tidligt op og starter på det forudprogrammerede repetoire. De synger alt lige fra Enrique Ingleses &lt;em&gt;I can be your hero&lt;/em&gt; til Pink Floyds &lt;em&gt;Hey you&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Entusiasmen og engagementet i bandet overskygger talentet.&lt;/p&gt;
+
+&lt;p&gt;Det er en fantastisk oplevelse at holde jul på den her måde. Maden smager fint, det er klassikes indiske retter, til dessert er der en plum cake kagemand pyntet som julemanden. Det hele er overstået på en time, så begynder de første gæster at forlade området igen.&lt;/p&gt;
+
+&lt;p&gt;KLIK på billedet nedenfor og se en lille videosnas fra vores julebal!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://youtu.be/gi860HaiSl0&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/images/blog/merry_xmas_cochin.png&quot; alt=&quot;Merry x-mas Cochin&quot; class=&quot;stdcenter&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Sådan holder man jul i Kerala. Det er langt fra Disneys Chip og Chap i sneen og det er lang fra Danmark.&lt;/p&gt;
+
+&lt;p&gt;I morgen skal vi videre med toget til stranden ved Kowalam.&lt;/p&gt;</content><author><name>potus</name></author><category term="Jul" /><category term="Kerala in India" /><category term="Cochin" /><summary type="html">I aften er det juleaften, Den første sne er allerede faldet - Bare ikke her. Vi er i Cochin, en millionby i Kerala, Indiens sydligste stat. I går tog vi den store tur rundt i byen og så alle turistfælderne. I dag er vi derfor helt uden forpligtelser.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/blog/DSCN1540.JPG" /></entry><entry><title type="html">Goodbye Dewalokam</title><link href="https://www.lakruzz.com/en/dewalokam+day+5/" rel="alternate" type="text/html" title="Goodbye Dewalokam" /><published>2014-12-19T00:00:00+01:00</published><updated>2014-12-19T00:00:00+01:00</updated><id>https://www.lakruzz.com/en/dewalokam+day+5</id><content type="html" xml:base="https://www.lakruzz.com/en/dewalokam+day+5/">&lt;p class=&quot;kicker&quot;&gt;Jose, the host at &lt;a href=&quot;http://www.dewalokam.com&quot;&gt;Dewalokam&lt;/a&gt;, where we’ve been staying for &lt;a href=&quot;/en/dewalokam+day+4&quot;&gt;4 days now&lt;/a&gt; tells that this place originally came to live by a wrong. We’re once again gathered for the pre-dinner drink session where all the guests summon. We’re having a conversation on the subject of being and entrepreneur. He tries to give me the impression that this is not really who they are. Both he and his wife Sinta used be just teachers. And thats what they still are - deep down.&lt;/p&gt;
+
+&lt;h2 id=&quot;to-be-or-not-to-be---an-entrepreneur&quot;&gt;To be or not to be - an entrepreneur&lt;/h2&gt;
+&lt;p&gt;I have to correct him. Look around. The four days here has been like entering a small paradise for a short time.&lt;/p&gt;
+
+&lt;p&gt;They had many struggles in building Dewalokam to what it is today, Sinta &lt;a href=&quot;/en/dewalokam+day+3#no-regrets---for-the-past-two-years&quot;&gt;already told me&lt;/a&gt; about these struggles a few days ago.&lt;/p&gt;
+
+&lt;p&gt;But both Sinta and Jose strikes me as genuine entrepreneurs. People that builds and construct things. They build a place that the whole local community now depends upon, they have more than 20 people employed and they have really done a lot of effort, including some innovative marketing gimmicks that make this place stand out.&lt;/p&gt;
+
+&lt;p&gt;I list some of them to him:&lt;/p&gt;
+
+&lt;p&gt;A 2 meter high local map on wall showing Dewalokam in the center of everything. “That’s Sinta’s idea” he replies.&lt;/p&gt;
+
+&lt;p&gt;Yoga in the morning. “That’s Sinta” he laughs af if he’s trying to prove that he’s not an entrepreneur.&lt;/p&gt;
+
+&lt;p&gt;The sign in the rear window of Siby’s car showing the name and logo of Dewalokam. “Thats’ Siby’s own idea”&lt;/p&gt;
+
+&lt;p&gt;The Cookbook. “That’s Sinta”&lt;/p&gt;
+
+&lt;p&gt;The garden. “OK, That’s me he laughs”, I believe I see a shade of proudness in his eyes.&lt;/p&gt;
+
+&lt;p&gt;We continue this game for a while but Sinta is now joining the conversation I sense that they actually are aware of the fact that running two jobs along running an organic farm and a homestay for more than 20 guests and providing employment for 20 people probably is a bit of a mouthful and as far as they have come now, and the success they have had the past two years clearly indicates that there is really no turning back.&lt;/p&gt;
+
+&lt;p&gt;Today Sinta went to her previous job - in one of her finest tailor made dresses - to collect the last three months pay of her salary, but bureaucracy kicked in and some papers weren’t signed yet and autorisation for the pay-out was halted.&lt;/p&gt;
+
+&lt;p&gt;One of the good things about being a self-employed entrepreneur is that the path to execute ideas into action is usually way shorter then if you’re part of a rigid bureaucracy.&lt;/p&gt;
+
+&lt;p&gt;Sinta asks about mountain biking - Chewang, who runs his own trekking and adventure bureau in Ladakh in North India and I get really enthusiastic. The other day when I was walking through the rubber plantations I saw mountainbike track potential all over the place. How fun it would be to build a 5-6 km track there, with north shore, buns and drops. Chewang kicks in. He’s actually looking into starting some bike tours in the mountains down here in Kerala.&lt;/p&gt;
+
+&lt;p&gt;I count Sinta and Jose as genuine entrepreneurs - and I can see the way Sinta listens to Chewang and me babbling about mountainbikes, that she’s actually considering it.&lt;/p&gt;
+
+&lt;p&gt;I would love to come back here someday and ride tracks in the plantations and in the forest - after some yoga and mediation in the morning - and then come back just before lunch to and take a quick dive in the Kaliyar river that runs by Dewalokam, before eating delicious three cours meals, having one-meter-tea in the court yard and end up in conversations with interesting people from everywhere.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/DSCN1144.JPG&quot; alt=&quot;Dewalokam goodbye&quot; class=&quot;stdcenter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.tripadvisor.in/Hotel_Review-g2068421-d1632859-Reviews-Dewalokam_Farmstay_Retreat-Karimannoor_Kerala&quot;&gt;Dewalokam On Tripadvisor&lt;/a&gt; has 243 reviews at the time I’m writing this 239 of these reviews gave the place 5 stars. I have never seen anything else score this high on Tripadvisor - ever.&lt;/p&gt;
+
+&lt;p&gt;I hope Dewalokam will be here forever and I wish all my friends to experience this.&lt;/p&gt;
+
+&lt;p&gt;Tomorrow morning we will be off to &lt;a href=&quot;http://www.tripadvisor.in/Hotel_Review-g608471-d1026759-Reviews-Our_Land_Island_Backwater_Resort-Alappuzha_Kerala&quot;&gt;Our Land&lt;/a&gt; - a small island in the backwaters near Alappuzha.&lt;/p&gt;
+
+&lt;p&gt;I’ll end this post with a quote from Terminator - “I’ll be back”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/Illbeback.jpg&quot; alt=&quot;I'll be back&quot; /&gt;&lt;/p&gt;</content><author><name>{&quot;picture&quot;=&gt;&quot;/images/authors/lakruzz.png&quot;, &quot;twitter&quot;=&gt;&quot;lakruzz&quot;}</name></author><category term="Dewalokam" /><category term="Kerala in India" /><category term="Travel" /><summary type="html">Jose, the host at Dewalokam, where we’ve been staying for 4 days now tells that this place originally came to live by a wrong. We’re once again gathered for the pre-dinner drink session where all the guests summon. We’re having a conversation on the subject of being and entrepreneur. He tries to give me the impression that this is not really who they are. Both he and his wife Sinta used be just teachers. And thats what they still are - deep down.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.lakruzz.com/images/blog/DSCN1144.JPG" /></entry></feed>
